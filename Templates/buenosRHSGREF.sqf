@@ -28,7 +28,7 @@ vehSDKBoat = "I_C_Boat_Transport_01_F";
 vehSDKRepair = "rhsgref_ins_g_gaz66_repair";
 SDKFlag = "Flag_Syndikat_F";
 SDKFlagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
-tipoPetros = "rhsgref_ins_g_squadleader";
+tipoPetros = "rhsgref_ins_g_commander";
 
 soporteStaticSDKB = "RHS_SPG9_Tripod_Bag";
 ATStaticSDKB = "RHS_SPG9_Gun_Bag";
@@ -61,9 +61,9 @@ else
 		{
 		FIARifleman = "rhsgref_hidf_rifleman";
 		FIAMarksman = "rhsgref_hidf_marksman";
-		vehFIAArmedCar = "rhsgref_hidf_m1025_m2";
+		vehFIAArmedCar = "rhs_tigr_sts_3camo_msv";
 		vehFIATruck = "rhsgref_cdf_b_ural_open";
-		vehFIACar = "rhsgref_hidf_m998_4dr";
+		vehFIACar = "rhsgref_cdf_b_reg_uaz";
 
 		gruposFIASmall = [["rhsgref_hidf_grenadier","rhsgref_hidf_rifleman"],["rhsgref_hidf_marksman","rhsgref_hidf_rifleman"]];//["IRG_InfSentry","IRG_ReconSentry","IRG_SniperTeam_M"];///
 		gruposFIAMid = [["rhsgref_hidf_teamleader","rhsgref_hidf_machinegunner","rhsgref_hidf_machinegunner_assist","rhsgref_hidf_grenadier"],["rhsgref_hidf_teamleader","rhsgref_hidf_rifleman_m72","rhsgref_hidf_rifleman_m72","rhsgref_hidf_grenadier"]];//["IRG_InfAssault","IRG_InfTeam","IRG_InfTeam_AT"];///
@@ -87,10 +87,10 @@ else
 		};
 	};
 
-vehPoliceCar = "B_GEN_OFFROAD_01_gen_F";
-policeOfficer = "B_GEN_Commander_F";
-policeGrunt = "B_GEN_Soldier_F";
+vehPoliceCar = "rhsgref_cdf_b_reg_uaz_open";
+policeOfficer = "rhsgref_cdf_b_ngd_squadleader";
+policeGrunt = "rhsgref_cdf_b_ngd_rifleman_lite";
 gruposNATOGen = [policeOfficer,policeGrunt];
-nameBuenos = "ChDKZ";
+nameBuenos = "DPVC";
 
-factionGEN = "BLU_GEN_F";
+factionGEN = "rhsgref_faction_cdf_ground";

@@ -91,7 +91,7 @@ class Params
         title = "Enable Server Membership";
         texts[] = {"Yes","No"};
         values[] = {1,0};
-        default = 1;
+        default = 0;
         //function = "BIS_fnc_paramDaytime"; // (Optional) [[Functions_Library_(Arma_3)|Function]] [[call]]ed when player joins, selected value is passed as an argument
         //isGlobal = 1; // (Optional) 1 to execute script / function locally for every player who joins, 0 to do it only on server
     };
@@ -124,7 +124,7 @@ class Params
         title = "Allow PvP Slots";
         values[] = {1,0};
         texts[] = {"Yes","No"};
-        default = 1;
+        default = 0;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class pMarkers
@@ -155,7 +155,7 @@ class Params
         title = "Rate of Civ Traffic";
         values[] = {0.5,1,3};
         texts[] = {"Low","Medium","JAM"};
-        default = 1;
+        default = 0.5;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class memberSlots
@@ -196,11 +196,11 @@ class CfgIdentities
     };
      class amiguete
     {
-        name = "Boris";
+        name = "Orenthal James Simpson";
         nameSound = "Warlock";
-        face="WhiteHead_03";
+        face="AfricanHead_02";
 	glasses="None";
-	speaker="Male01GRE";
+	speaker="Male02RUS";
 	pitch=1.098;
     };
       class Anthis
@@ -210,7 +210,7 @@ class CfgIdentities
         face="WhiteHead_05";
 	glasses="None";
 	speaker="Male02GRE";
-	pitch=1.093;
+	pitch=1.097;
     };
       class Costa
     {
@@ -360,15 +360,15 @@ class CfgDebriefing
 	{
 		title = "V I C T O R Y";
 		subtitle = "Chernarus is Ours!";
-		description = "The population of Chernarus loves you!<br/>The brave rebel soldiers proved their valour, and you, Chernarus' new (not very)democratically elected leader, can finally have a nice holiday. A deserved rest on a Greek island, drinking with Boris, the Slav King. <br/><br/>I hear Altis is nice this time of the year";
+		description = "The population of Chernarus loves you!<br/>The brave rebel soldiers proved their valour, and you, Chernarus' new (not very)democratically elected leader, can finally have a nice holiday. A deserved rest in the hills, drinking with O.J. Simpson, the Grand Dragon of the DPVC. <br/><br/>I hear Altis is nice this time of the year";
 		picture = "n_inf";
 		pictureColor[] = {0.0,0.5,0.0,1};
 	};
     class petrosDead
     {
-        title = "Boris is Dead";
-        subtitle = "Boris is Dead";
-        description = "Congratulations!: The slav king Boris is dead. Now with The rebels without a leader, you may think about joining them, and free Chernarus";
+        title = "OJ is Dead";
+        subtitle = "Orenthal James Simpson is Dead";
+        description = "Congratulations!: The renowned murderer O.J. Simpson is dead. Now with The rebels without a leader, you may think about joining them, and free Chernarus";
         picture = "b_unknown";
         pictureColor[] = {0.5,0.0,0.0,1};
     };

@@ -11,8 +11,8 @@ if (lados getVariable [_marcador,sideUnknown] == buenos) then
 		{
 		_texto = format ["%2 Airbase%1",_texto,nameBuenos];
 		[_mrkD,format ["%1 Airbase",nameBuenos]] remoteExec ["setMarkerTextLocal",[malos,muyMalos],true];
-		//_mrkD setMarkerText format ["SDK Airbase%1",_texto];
-		if (markerType _mrkD != "flag_Syndicat") then {_mrkD setMarkerType "flag_Syndicat"};
+		//_mrkD setMarkerText format ["DPVC Airbase%1",_texto];
+		if (markerType _mrkD != "flag_Green") then {_mrkD setMarkerType "flag_Green"};
 		}
 	else
 		{

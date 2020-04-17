@@ -67,4 +67,9 @@ if (!isMultiPlayer) then
     if (buenos == independent) then {deleteMarker "respawn_west"} else {deleteMarker "respawn_guerrila"};
     };
 
+if (local player) then { 
+  player enableFatigue false; 
+  player addMPEventhandler ["MPRespawn", {player enableFatigue false}]; 
+};
+
 

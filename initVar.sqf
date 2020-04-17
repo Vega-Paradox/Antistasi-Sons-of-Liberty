@@ -33,8 +33,8 @@ buenos = side group petros;
 malos = if (buenos == independent) then {west} else {independent};
 muyMalos = east;
 
-colorBuenos = if (buenos == independent) then {"colorGUER"} else {"colorBLUFOR"};
-colorMalos = if (buenos == independent) then {"colorBLUFOR"} else {"colorGUER"};
+colorBuenos = if (buenos == independent) then {"colorBLUFOR"} else {"colorBLUFOR"};
+colorMalos = if (buenos == independent) then {"colorGUER"} else {"colorGUER"};
 colorMuyMalos = "colorOPFOR";
 
 respawnBuenos = if (buenos == independent) then {"respawn_guerrila"} else {"respawn_west"};
@@ -549,7 +549,7 @@ misiones = []; publicVariable "misiones";
 movingMarker = false;
 if !(hayIFA) then
 	{
-	unlockedItems = ["ItemMap","ItemWatch","ItemCompass","FirstAidKit","Medikit","ToolKit","H_Booniehat_khk","H_Booniehat_oli","H_Booniehat_grn","H_Booniehat_dirty","H_Cap_oli","H_Cap_blk","H_MilCap_rucamo","H_MilCap_gry","H_BandMask_blk","H_Bandanna_khk","H_Bandanna_gry","H_Bandanna_camo","H_Shemag_khk","H_Shemag_tan","H_Shemag_olive","H_ShemagOpen_tan","H_Beret_grn","H_Beret_grn_SF","H_Watchcap_camo","H_TurbanO_blk","H_Hat_camo","H_Hat_tan","H_Beret_blk","H_Beret_red","H_Watchcap_khk","G_Balaclava_blk","G_Balaclava_combat","G_Balaclava_lowprofile","G_Balaclava_oli","G_Bandanna_beast","G_Tactical_Black","G_Aviator","G_Shades_Black","acc_flashlight"] + uniformsSDK + civUniforms;//Initial Arsenal available items
+	unlockedItems = ["ItemMap","ItemWatch","ItemCompass","ItemGPS","FirstAidKit","Medikit","ToolKit","H_Booniehat_khk","H_Booniehat_oli","H_Booniehat_grn","H_Booniehat_dirty","H_Cap_oli","H_Cap_blk","H_MilCap_rucamo","H_MilCap_gry","H_BandMask_blk","H_Bandanna_khk","H_Bandanna_gry","H_Bandanna_camo","H_Shemag_khk","H_Shemag_tan","H_Shemag_olive","H_ShemagOpen_tan","H_Beret_grn","H_Beret_grn_SF","H_Watchcap_camo","H_TurbanO_blk","H_Hat_camo","H_Hat_tan","H_Beret_blk","H_Beret_red","H_Watchcap_khk","G_Balaclava_blk","G_Balaclava_combat","G_Balaclava_lowprofile","G_Balaclava_oli","G_Bandanna_beast","G_Tactical_Black","G_Aviator","G_Shades_Black","acc_flashlight"] + uniformsSDK + civUniforms;//Initial Arsenal available items
 	if (side group petros == independent) then {unlockedItems pushBack "I_UavTerminal"} else {unlockedItems pushBack "B_UavTerminal"};
 	}
 else
@@ -603,9 +603,9 @@ if (!activeGREF) then
     }
 else
     {
-    unlockedWeapons = ["rhs_weap_akms","rhs_weap_makarov_pmm","Binocular","rhs_weap_rpg7","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_pp2000_folded","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43"];
-    unlockedRifles = ["rhs_weap_akms","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
-    unlockedMagazines = ["rhs_30Rnd_762x39mm","rhs_mag_9x18_12_57N181S","rhs_rpg7_PG7VL_mag","rhsgref_5Rnd_762x54_m38","rhsgref_5Rnd_792x57_kar98k","rhs_mag_rgd5","rhs_mag_9x19mm_7n21_20","rhsgref_20rnd_765x17_vz61","rhsgref_30rnd_1143x23_M1911B_SMG","rhsgref_8Rnd_762x63_M2B_M1rifle"];
+    unlockedWeapons = ["rhs_weap_akms","rhs_weap_makarov_pmm","Binocular","rhs_weap_rpg7","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_pp2000_folded","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz","rhs_weap_akmn"];
+    unlockedRifles = ["rhs_weap_akms","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
+    unlockedMagazines = ["rhs_30Rnd_762x39mm","rhs_mag_9x18_12_57N181S","rhs_rpg7_PG7VL_mag","rhsgref_5Rnd_762x54_m38","rhsgref_5Rnd_792x57_kar98k","rhs_mag_rgd5","rhs_mag_9x19mm_7n21_20","rhsgref_20rnd_765x17_vz61","rhsgref_30rnd_1143x23_M1911B_SMG","rhsgref_8Rnd_762x63_M2B_M1rifle","rhs_mag_20Rnd_762x51_m80_fnfal"];
     initialRifles = ["rhs_weap_akms","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_savz61"];
     unlockedItems = unlockedItems + ["rhs_acc_2dpZenit"];
     unlockedAT = ["rhs_weap_rpg7"];
@@ -617,7 +617,7 @@ _vest = _loadOut select 4;
 if !(_vest isEqualTo []) then {unlockedItems pushBackUnique (_vest select 0)};
 } forEach [SDKSniper,SDKATman,SDKMedic,SDKMG,SDKExp,SDKGL,SDKMil,SDKSL,SDKEng,[SDKUnarmed],[staticCrewBuenos]];
 
-unlockedBackpacks = if !(hayIFA) then {["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr"]} else {["B_LIB_US_M2Flamethrower","B_LIB_SOV_RA_MGAmmoBag_Empty"]}; //Initial Arsenal available backpacks
+unlockedBackpacks = if !(hayIFA) then {["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr","rhs_sidor"]} else {["B_LIB_US_M2Flamethrower","B_LIB_SOV_RA_MGAmmoBag_Empty"]}; //Initial Arsenal available backpacks
 //lockedMochis = lockedMochis - unlockedBackpacks;
 unlockedOptics = [];
 unlockedMG = [];

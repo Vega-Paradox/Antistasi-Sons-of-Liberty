@@ -92,7 +92,7 @@ _introShot =
     ]
     ] spawn BIS_fnc_establishingShot;
 
-_titulo = if (worldName == "Chernarus") then {["Liberators of Chernarus","by Barbolani","ported by Evoke",antistasiVersion] spawn BIS_fnc_infoText} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
+_titulo = if (worldName == "Chernarus") then {["Sons of Liberty","by Barbolani","edited by Warcrimes-R-Us",antistasiVersion] spawn BIS_fnc_infoText} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
 disableUserInput false;
 player addWeaponGlobal "itemmap";
 if !(hayIFA) then {player addWeaponGlobal "itemgps"};
@@ -617,9 +617,9 @@ mapa addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_thi
 if (isMultiplayer) then {mapa addAction ["AI Load Info", "[] remoteExec [""A3A_fnc_AILoadInfo"",2]",nil,0,false,true,"","(_this == theBoss)"]};
 _nul = [player] execVM "OrgPlayers\unitTraits.sqf";
 grupoPetros = group petros;
-grupoPetros setGroupIdGlobal ["Petros","GroupColor4"];
+grupoPetros setGroupIdGlobal ["Grand Dragon of the DPVC","GroupColor4"];
 petros setIdentity "amiguete";
-petros setName "Boris";
+petros setName "Orenthal James Simpson";
 petros disableAI "MOVE";
 petros disableAI "AUTOTARGET";
 petros addAction ["Mission Request", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","_this == theBoss"];

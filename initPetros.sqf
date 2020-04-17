@@ -1,5 +1,3 @@
-removeHeadgear petros;
-removeGoggles petros;
 petros setSkill 1;
 petros setVariable ["respawning",false];
 petros allowDamage false;
@@ -81,8 +79,8 @@ petros addMPEventHandler ["mpkilled",
             petros = grupoPetros createUnit [tipoPetros, position _viejo, [], 0, "NONE"];
             publicVariable "petros";
             grupoPetros setGroupId ["Grand Dragon of the DPVC","GroupColor4"];
-            petros setIdentity "hasan";
-            if (worldName == "Tanoa") then {petros setName "Maru"} else {petros setName "Orenthal James Simpson"};
+            petros setIdentity "amiguete";
+            if (worldName == "Tanoa") then {petros setName "Orenthal James Simpson"} else {petros setName "Orenthal James Simpson"};
             petros disableAI "MOVE";
             petros disableAI "AUTOTARGET";
             if (group _viejo == grupoPetros) then {[Petros,"mission"]remoteExec ["flagaction",[buenos,civilian],petros]} else {[Petros,"buildHQ"] remoteExec ["flagaction",[buenos,civilian],petros]};
