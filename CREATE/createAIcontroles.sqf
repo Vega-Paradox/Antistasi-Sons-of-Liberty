@@ -60,7 +60,7 @@ if (_esControl) then
 		if !(hayIFA) then
 			{
 			_pos = [getPos (_roads select 0), 7, _dirveh + 270] call BIS_Fnc_relPos;
-			_bunker = "Land_BagBunker_01_Small_green_F" createVehicle _pos;
+			_bunker = "Fort_Nest" createVehicle _pos;
 			_vehiculos pushBack _bunker;
 			_bunker setDir _dirveh;
 			_pos = getPosATL _bunker;
@@ -77,7 +77,7 @@ if (_esControl) then
 			_soldados pushBack _unit;
 			sleep 1;
 			_pos = [getPos (_roads select 0), 7, _dirveh + 90] call BIS_Fnc_relPos;
-			_bunker = "Land_BagBunker_01_Small_green_F" createVehicle _pos;
+			_bunker = "Fort_Nest" createVehicle _pos;
 			_vehiculos pushBack _bunker;
 			_bunker setDir _dirveh + 180;
 			_pos = getPosATL _bunker;

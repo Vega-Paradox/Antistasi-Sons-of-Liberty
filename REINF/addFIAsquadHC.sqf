@@ -76,7 +76,7 @@ if ((_conMochis != "") and hayIFA) exitWith {hint "Your current modset does not 
 
 if (_hr < _costeHR) then {_exit = true;hint format ["You do not have enough HR for this request (%1 required)",_costeHR]};
 
-if (_resourcesFIA < _coste) then {_exit = true;hint format ["You do not have enough money for this request (%1 € required)",_coste]};
+if (_resourcesFIA < _coste) then {_exit = true;hint format ["You do not have enough money for this request (%1 ой required)",_coste]};
 
 if (_exit) exitWith {garageVeh = nil};
 
@@ -198,7 +198,7 @@ _display = findDisplay 100;
 if (str (_display) != "no display") then
 	{
 	_ChildControl = _display displayCtrl 104;
-	_ChildControl  ctrlSetTooltip format ["Buy a vehicle for this squad for %1 €",_coste];
+	_ChildControl  ctrlSetTooltip format ["Buy a vehicle for this squad for %1 ой",_coste];
 	_ChildControl = _display displayCtrl 105;
 	_ChildControl  ctrlSetTooltip "Barefoot Infantry";
 	};
@@ -211,7 +211,7 @@ if ((!dialog) and (isNil "vehQuery")) exitWith {};
 
 vehQuery = nil;
 //_resourcesFIA = server getVariable "resourcesFIA";
-//if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money for this vehicle: %1 € required",_coste]};
+//if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money for this vehicle: %1 ой required",_coste]};
 _pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
 _mortero = _tipoVeh createVehicle _pos;
 _nul = [_mortero] call A3A_fnc_AIVEHinit;

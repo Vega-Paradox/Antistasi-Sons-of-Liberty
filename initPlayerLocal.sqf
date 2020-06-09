@@ -89,10 +89,28 @@ _introShot =
     [
     	["\a3\ui_f\data\map\markers\nato\o_inf.paa", _colorbuenos, markerPos "insertMrk", 1, 1, 0, "Insertion Point", 0],
         ["\a3\ui_f\data\map\markers\nato\o_inf.paa", _colormuyMalos, markerPos "towerBaseMrk", 1, 1, 0, "Radio Towers", 0]
-    ]
+    ],
+	0,
+	true
     ] spawn BIS_fnc_establishingShot;
-
-_titulo = if (worldName == "Chernarus") then {["Sons of Liberty","by Barbolani","edited by Warcrimes-R-Us",antistasiVersion] spawn BIS_fnc_infoText} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
+//sleep 10.75;
+waitUntil {scriptdone _introshot};
+	[0, "BLACK", 0.01, 1] spawn BIS_fnc_fadeEffect;
+	sleep 0.25;
+	5 fadeSound 1;
+_titulo = if (worldName == "Chernarus") then {sleep 1.5; [
+	[
+		["SONS OF LIBERTY", "<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t><br/>"],
+		["by Warcrimes-R-Us", "<t align = 'center' shadow = '1' size = '0.8' font='EtelkaMonospacePro'>%1</t><br/>"],
+		["original Antistasi by Barbolani", "<t align = 'center' shadow = '1' size = '0.65' font='EtelkaMonospacePro'>%1</t>", 5]
+	],
+	0, safeZoneY + safeZoneH / 2
+] spawn BIS_fnc_typeText; sleep 9.5; [
+	[
+		["Welcome to the fight, comrade.", "<t align = 'center' shadow = '1' size = '0.75' font='EtelkaMonospacePro'>%1</t>", 15]
+	],
+	0, safeZoneY + safeZoneH / 2
+] spawn BIS_fnc_typeText; sleep 6.5; [1, "BLACK", 3, 1] spawn BIS_fnc_fadeEffect;} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
 disableUserInput false;
 player addWeaponGlobal "itemmap";
 if !(hayIFA) then {player addWeaponGlobal "itemgps"};
@@ -209,7 +227,7 @@ if (player getVariable ["pvp",false]) exitWith
 
 player setVariable ["owner",player,true];
 player setVariable ["punish",0,true];
-player setVariable ["dinero",100,true];
+player setVariable ["dinero",150,true];
 player setVariable ["rango",rank player,true];
 
 rezagados = creategroup buenos;
@@ -431,7 +449,9 @@ if (isMultiplayer) then
 		};
 	};
 
-waitUntil {scriptdone _introshot};
+//waitUntil {scriptdone _introshot};
+waitUntil {scriptDone _titulo};
+sleep 1.5;
 if (_isJip) then
 	{
 	_nul = [] execVM "modBlacklist.sqf";
@@ -448,11 +468,11 @@ if (_isJip) then
 			{
 			miembros pushBack (getPlayerUID player);
 			publicVariable "miembros";
-			hint "You are not in the member's list, but as you are Server Admin, you have been added up. Welcome!"
+			hint "Welcome, server admin!"
 			}
 		else
 			{
-			hint "Welcome Guest\n\nYou have joined this server as guest";
+			hint "Welcome!\n\nYou have joined this server as guest.";
 			//if ((count playableUnits == maxPlayers) and (({[_x] call A3A_fnc_isMember} count playableUnits) < count miembros) and (serverName in servidoresOficiales)) then {["serverFull",false,1,false,false] call BIS_fnc_endMission};
 			};
 		}
@@ -550,7 +570,14 @@ else
 			};
 		};
 	};
-waitUntil {scriptDone _titulo};
+//Stamina parameter toggle check
+_staminaDisable = "staminaDisable" call BIS_fnc_getParamValue;
+if (_staminaDisable == 1) then {
+	player enableStamina false;
+	} else{
+	player enableStamina true;
+	};
+//waitUntil {scriptDone _titulo};
 
 _texto = [];
 
@@ -571,21 +598,21 @@ if (hayFFAA) then
 	_texto = _texto + ["FFAA Detected\n\nAntistasi detects FFAA in the server config.\nFIA Faction will be replaced by Spanish Armed Forces"];
 	};
 
-if (hayTFAR or hayACE or hayRHS or hayACRE or hayFFAA) then
-	{
-	[_texto] spawn
-		{
-		sleep 0.5;
-		_texto = _this select 0;
-		"Integrated Mods Detected" hintC _texto;
-		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
-			0 = _this spawn {
-				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
-				hintSilent "";
-			};
-			}];
-		};
-	};
+// if (hayTFAR or hayACE or hayRHS or hayACRE or hayFFAA) then
+// 	{
+// 	[_texto] spawn
+// 		{
+// 		sleep 0.5;
+// 		_texto = _this select 0;
+// 		"Integrated Mods Detected" hintC _texto;
+// 		hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
+// 			0 = _this spawn {
+// 				_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+// 				hintSilent "";
+// 			};
+// 			}];
+// 		};
+// 	};
 waituntil {!isnull (finddisplay 46)};
 gameMenu = (findDisplay 46) displayAddEventHandler ["KeyDown",A3A_fnc_teclas];
 //removeAllActions caja;
@@ -598,7 +625,7 @@ caja addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_thi
 bandera addAction ["HQ Management", {[] execVM "Dialogs\dialogHQ.sqf"},nil,0,false,true,"","(_this == theBoss) and (petros == leader group petros)"];
 bandera allowDamage false;
 bandera addAction ["Unit Recruitment", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot recruit units while there are enemies near you"} else {nul=[] execVM "Dialogs\unit_recruit.sqf"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-bandera addAction ["Buy Vehicle", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "vehicle_option"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+bandera addAction ["Buy Assets", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "vehicle_option"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 if (isMultiplayer) then {bandera addAction ["Personal Garage", {nul = [true] spawn A3A_fnc_garage},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"]};
 bandera addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
 cajaVeh allowDamage false;
@@ -608,8 +635,9 @@ cajaveh addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_
 fuego allowDamage false;
 fuego addAction ["Rest for 8 Hours", "skiptime.sqf",nil,0,false,true,"","(_this == theBoss)"];
 fuego addAction ["Clear Nearby Forest", "clearForest.sqf",nil,0,false,true,"","_this == theBoss"];
-fuego addAction ["On\Off Lamp", "onOffLamp.sqf",nil,0,false,true,"","(isPlayer _this) and (side (group _this) == buenos)"];
-fuego addAction ["I hate the fog", "[10,0] remoteExec [""setFog"",2]",nil,0,false,true,"","(_this == theBoss)"];
+fuego addAction ["Toggle Lamp", "onOffLamp.sqf",nil,0,false,true,"","(isPlayer _this) and (side (group _this) == buenos)"];
+fuego addAction ["I hate weather", "[30,0] remoteExec [""setFog"",2]; [30,0] remoteExec [""setRain"",0]; [30,0] remoteExec [""setOvercast"",0]",nil,0,false,true,"","(_this == theBoss)",4];
+fuego addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
 mapa allowDamage false;
 mapa addAction ["Game Options", {hint format ["Antistasi - %2\n\nVersion: %1\n\nDifficulty: %3\nUnlock Weapon Number: %4\nLimited Fast Travel: %5",antistasiVersion,worldName,if (skillMult == 1) then {"Normal"} else {if (skillMult == 0.5) then {"Easy"} else {"Hard"}},minWeaps,if (limitedFT) then {"Yes"} else {"No"}]; nul=CreateDialog "game_options";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 mapa addAction ["Map Info", {nul = [] execVM "cityinfo.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
@@ -623,6 +651,20 @@ petros setName "Orenthal James Simpson";
 petros disableAI "MOVE";
 petros disableAI "AUTOTARGET";
 petros addAction ["Mission Request", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","_this == theBoss"];
+petros addAction ["Politely move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
+
+//Add dealer actions
+	//Civ
+dealCivAir_f1 addAction ["Buy Civilian Aircraft", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optionair"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealCivAir_f2 addAction ["Buy Civilian Aircraft", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optionair"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealCivGnd_f1 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealCivGnd_f2 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealCivGnd_f3 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+	//Mil
+
+
+dealTestA addAction ["[TEST] Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealTestB addAction ["[TEST] Buy Civilian Aircraft", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optionair"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 
 disableSerialization;
 //1 cutRsc ["H8erHUD","PLAIN",0,false];

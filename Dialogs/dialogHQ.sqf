@@ -9,7 +9,7 @@ _display = findDisplay 100;
 if (str (_display) != "no display") then
 {
 	_ChildControl = _display displayCtrl 109;
-	_ChildControl  ctrlSetTooltip format ["Current level: %2. Next Level Training Cost: %1 €",1000 + (1.5*((skillFIA) *750)),skillFIA];
+	_ChildControl  ctrlSetTooltip format ["Current level: %2, Upgrade cost: %1 ой",1000 + (1.5*((skillFIA) *750)),skillFIA];
 /*
 	_ChildControl = _display displayCtrl 110;
 	{
@@ -53,7 +53,7 @@ if (str (_display) != "no display") then
 		else
 			{
 			_coste = round (_coste * (1-damage _veh));
-			_texto = format ["%2 Price: %1 €",_coste,_texto];
+			_texto = format ["%2 Price: %1 ой",_coste,_texto];
 			};
 		};
 

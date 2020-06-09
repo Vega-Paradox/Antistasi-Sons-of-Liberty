@@ -87,12 +87,12 @@ class HQ_menu 			{
 		class HQ_button_load: RscButton
 		{
 			idc = 104; 	//L1
-			text = "Grab 100 € from Pool"; //--- ToDo: Localize;
+			text = "Take 100 ой from pool"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Take 100 € from faction pool and add it to your personnal account. It will damage your position among the faction in the commander career";
+			tooltip = "Take 100 ой from faction pool and add it to your personnal account.\nThis will damage your reputation among the faction.";
 			action = "if (isMultiPlayer) then {if (player == theBoss) then {nul=call A3A_fnc_theBossSteal} else {hint ""Only Player Commander has access to this function""}} else {hint ""This function is MP only""};";
 		};
 		class HQ_button_savegame: RscButton
@@ -109,18 +109,18 @@ class HQ_menu 			{
 		class HQ_button_moveHQ: RscButton
 		{
 			idc = 106;	//L3
-			text = "Move HQ to another Zone"; //--- ToDo: Localize;
+			text = "Reposition HQ"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Maru will join your group. Ammobox must be empty. To rebuild, select the Build action near Maru";
+			tooltip = "OJ will join your group. Ammobox must be empty. To rebuild, select the 'Build' action near OJ.";
 			action = "closeDialog 0;if (player == theBoss) then {nul = [] spawn A3A_fnc_moveHQ;} else {hint ""Only Player Commander has access to this function""};";
 		};
 		class HQ_button_recruitUnit: RscButton
 		{
 			idc = 107;	//R1
-			text = "Ingame Member's List"; //--- ToDo: Localize;
+			text = "Members List"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -136,13 +136,13 @@ class HQ_menu 			{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cost: 5.000 €";
+			tooltip = "Rebuild damaged locations\nCost: 5,000 ой";
 			action = "closeDialog 0;if (player == theBoss) then {nul=[] spawn A3A_fnc_rebuildAssets} else {hint ""Only Player Commander has access to this function""};";
 		};
 		class HQ_button_vehicle: RscButton
 		{
 			idc = 109;	//R3
-			text = "Train AI - Skill Upgrade"; //--- ToDo: Localize;
+			text = "Upgrade Troop Skill"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -153,12 +153,12 @@ class HQ_menu 			{
 		class HQ_button_skill: RscButton
 		{
 			idc = 110;	//M4
-			text = "Garage Access"; //--- ToDo: Localize;
+			text = "Faction Garage"; //--- ToDo: Localize;
 			x = 0.37749 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Check Faction garage";
+			tooltip = "Access the faction garage";
 			action = "closeDialog 0;nul = [false] spawn A3A_fnc_garage";
 		};
 	};
@@ -206,7 +206,7 @@ class build_menu  			{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "AI will deploy or remove mines on desired objectives, using current arsenal mine count";
+			tooltip = "AI will deploy or remove mines on desired objectives, taken from the faction arsenal.";
 			action = "closeDialog 0;_nul = createDialog ""minebuild_menu"";";
 		};
 		class 4slots_R1: RscButton
@@ -228,7 +228,7 @@ class build_menu  			{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Add units to an existing garrison";
+			tooltip = "Add units to a garrison";
 			action = "closeDialog 0; [""add""] spawn A3A_fnc_garrisonDialog";
 		};
 		class 4slots_R2: RscButton
@@ -240,7 +240,7 @@ class build_menu  			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			//action = "closeDialog 0; [""delete""] spawn A3A_fnc_puestoDialog";
-			tooltip = "Remove whole garrisons or posts";
+			tooltip = "Remove garrisons or posts";
 			action = "closeDialog 0; [""rem""] spawn A3A_fnc_garrisonDialog";
 		};
 	};
@@ -560,7 +560,7 @@ class vehicle_option 	{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Buy Vehicle"; //--- ToDo: Localize;
+			text = "Buy Assets"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -579,23 +579,23 @@ class vehicle_option 	{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Civilian Vehicle"; //--- ToDo: Localize;
+			text = "Civilian Vehicles"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Civilian vehicles will allow you to travel in Undercover mode, while you stay close to roads and not entering bases, outposts and roadblocks";
+			tooltip = "Civilian vehicles allow you to travel while undercover, as long as you\nstay close to roads and don't go near enemy installations.";
 			action = "closeDialog 0;nul=[] execVM ""Dialogs\buy_vehicle_civ.sqf"";";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Military Vehicle"; //--- ToDo: Localize;
+			text = "Military Assets"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Wide variety of available faction vehicles";
+			tooltip = "A wide variety of available faction assets.";
 			action = "closeDialog 0; nul=[] execVM ""Dialogs\buy_vehicle.sqf"";";
 		};
 	};
@@ -617,7 +617,7 @@ class buy_vehicle 			{
 		class HQ_frame: RscFrame
 		{
 			idc = 102;
-			text = "Purchase Military Vehicle"; //--- ToDo: Localize;
+			text = "Purchase Military Asset"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -792,6 +792,413 @@ class civ_vehicle 			{
 		 };
 	};
 };
+
+//Dealers
+	//Dealers: Civilian
+		//Air options
+class dealer_civ_optionair 	{
+	idd=-1;
+	movingenable=false;
+
+	class controls {
+
+		class DCa_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.20 * safezoneH;//30
+		};
+		class DCa_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Aircraft"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.18 * safezoneH;//28
+		};
+		class DCa_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0";
+		};
+		class DCa_button_mainOpt1: RscButton
+		{
+			idc = -1;
+			text = "Civilian Helicopters"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "A variety of civilian-grade helicopters";
+			action = "closeDialog 0;nul=[] execVM ""Dialogs\dealer_civ_helis.sqf"";";
+		};
+		class DCa_button_mainOpt2: RscButton
+		{
+			idc = -1;
+			text = "Civilian Planes"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "A variety of civilian-grade planes";
+			action = "closeDialog 0;nul=[] execVM ""Dialogs\dealer_civ_planes.sqf"";";
+		};
+	};
+};
+class dealer_civ_helis 			{
+	idd=100;
+	movingenable=false;
+
+	class controls {
+		class DCa_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.30 * safezoneH;
+		};
+		class DCa_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Helicopters"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.28 * safezoneH;
+		};
+		class DCa_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0; nul = createDialog ""dealer_civ_optionair"";";
+		};
+		class DCa_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "Light Heli"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civHeli] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCa_button_opt2: RscButton
+		{
+			idc = 105;
+			text = "Medium Heli"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civairMed] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCa_button_opt3: RscButton
+		{
+			idc = 106;
+			text = "Heavy 1"; //--- ToDo: Localize;
+			//x = 0.37749 * safezoneW + safezoneX;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civairHeavy] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCa_button_opt4: RscButton
+		{
+			idc = 107;
+		 	text = "Heavy 2"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+		 	y = 0.415981 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [civairHeavy2] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+	};
+};
+class dealer_civ_planes 			{
+	idd=100;
+	movingenable=false;
+
+	class controls {
+		class DCa_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.30 * safezoneH;
+		};
+		class DCa_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Planes"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.28 * safezoneH;
+		};
+		class DCa_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0; nul = createDialog ""dealer_civ_optionair"";";
+		};
+		class DCa_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "Scout"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civairScout] spawn A3A_fnc_addFIAVENDveh;";
+		};
+	};
+};
+		//Ground options
+class dealer_civ_optiongnd 	{
+	idd=-1;
+	movingenable=false;
+
+	class controls {
+
+		class DCg_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.20 * safezoneH;//30
+		};
+		class DCg_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Automobiles"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.18 * safezoneH;//28
+		};
+		class DCg_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0";
+		};
+		class DCg_button_mainOpt1: RscButton
+		{
+			idc = -1;
+			text = "Civilian Cars"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "A variety of civilian-grade cars & bikes";
+			action = "closeDialog 0;nul=[] execVM ""Dialogs\dealer_civ_cars.sqf"";";
+		};
+		class DCg_button_mainOpt2: RscButton
+		{
+			idc = -1;
+			text = "Civilian Trucks"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "A variety of civilian-grade trucks";
+			action = "closeDialog 0;nul=[] execVM ""Dialogs\dealer_civ_trucks.sqf"";";
+		};
+	};
+};
+class dealer_civ_cars 			{
+	idd=100;
+	movingenable=false;
+
+	class controls {
+		class DCg_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.30 * safezoneH;
+		};
+		class DCg_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Cars"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.28 * safezoneH;
+		};
+		class DCg_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0; nul = createDialog ""dealer_civ_optiongnd"";";
+		};
+		class DCg_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "Bike"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndBike] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt2: RscButton
+		{
+			idc = 105;
+			text = "Sedan"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndSedan] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt3: RscButton
+		{
+			idc = 106;
+			text = "Heavy Jeep"; //--- ToDo: Localize;
+			//x = 0.37749 * safezoneW + safezoneX;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndJeepH] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt4: RscButton
+		{
+			idc = 107;
+		 	text = "Light Jeep"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+		 	y = 0.415981 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [civgndJeepL] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+	};
+};
+class dealer_civ_trucks 			{
+	idd=100;
+	movingenable=false;
+
+	class controls {
+		class DCg_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.412025 * safezoneH;
+		};
+		class DCg_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Civilian Trucks"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.392025 * safezoneH;
+		};
+		class DCg_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0; nul = createDialog ""dealer_civ_optiongnd"";";
+		};
+		class DCg_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "Light Truck"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndLightTruck] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt2: RscButton
+		{
+			idc = 105;
+			text = "Covered Truck"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndCoverTruck] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt3: RscButton
+		{
+			idc = 106;
+			text = "Repair Truck"; //--- ToDo: Localize;
+			//x = 0.37749 * safezoneW + safezoneX;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [civgndRepairTruck] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DCg_button_opt4: RscButton
+		{
+			idc = 107;
+		 	text = "Recovery Truck"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+		 	y = 0.415981 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [civgndRecovTruck] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+		class DCg_button_opt5: RscButton
+		{
+			idc = 108;
+		 	text = "Fuel Truck"; //--- ToDo: Localize;
+			x = 0.3774895 * safezoneW + safezoneX;
+		 	y = 0.514003 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [civgndFuelTruck] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+	};
+};
+	//Dealers: Military
+		//Optionblank
+
 
 //Map
 class game_options 		{
@@ -1267,7 +1674,7 @@ class radio_comm 		{
 		class 8slots_L2: RscButton
 		{
 			idc = -1;
-			text = "Undercover ON"; //--- ToDo: Localize;
+			text = "Go Undercover"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2248,7 +2655,7 @@ class player_money 			{
 		class HQ_button_AT: RscButton
 		{
 			idc = -1;
-			text = "Donate 100 € to player"; //--- ToDo: Localize;
+			text = "Donate 100 ой to player"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2258,7 +2665,7 @@ class player_money 			{
 		class HQ_button_AA: RscButton
 		{
 			idc = -1;
-			text = "Donate 100 € to Faction"; //--- ToDo: Localize;
+			text = "Donate 100 ой to Faction"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;

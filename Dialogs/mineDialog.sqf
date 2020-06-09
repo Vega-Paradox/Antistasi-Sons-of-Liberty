@@ -13,7 +13,7 @@ if (_tipo == "delete") then
 	_coste = _coste - (server getVariable (SDKExp select 0));
 	_hr = 1;
 	};
-if ((server getVariable "resourcesFIA" < _coste) or (server getVariable "hr" < _hr)) exitWith {hint format ["Not enought resources to recruit a mine deploying team (%1 € and %2 HR needed)",_coste,_hr]};
+if ((server getVariable "resourcesFIA" < _coste) or (server getVariable "hr" < _hr)) exitWith {hint format ["Not enought resources to recruit a mine deploying team (%1 ой and %2 HR needed)",_coste,_hr]};
 
 if (_tipo == "delete") exitWith
 	{

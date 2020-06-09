@@ -21,7 +21,7 @@ if (!isMultiPlayer) then {_resourcesFIA = server getVariable "resourcesFIA"} els
 		};
 	};
 
-if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money for this vehicle: %1 € required",_coste]};
+if (_resourcesFIA < _coste) exitWith {hint format ["You do not have enough money for this vehicle: %1 ой required",_coste]};
 _cercano = [marcadores select {lados getVariable [_x,sideUnknown] == buenos},player] call BIS_fnc_nearestPosition;
 if !(player inArea _cercano) exitWith {hint "You need to be close to one of your garrisons to be able to retrieve a vehicle from your garage"};
 
@@ -29,14 +29,14 @@ garageVeh = _tipoVeh createVehicleLocal [0,0,1000];
 garageVeh allowDamage false;
 garageVeh enableSimulationGlobal false;
 comprado = 0;
-[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys.<t size='0.5'><br/>Arrow Left-Right to rotate<br/>SPACE to Select<br/>ENTER to Exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
-hint "Hover your mouse to the desired position. If it's safe and suitable, you will see the vehicle";
+[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys<t size='0.5'><br/>[LEFT/RIGHT ARROW] to rotate<br/>[SPACE] to place<br/>[ENTER] to exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
+hint "Use your mouse to move the vehicle to the desired position. If it's safe and suitable, the vehicle will appear.";
 garageKeys = (findDisplay 46) displayAddEventHandler ["KeyDown",
 		{
 		_handled = false;
 		_salir = false;
 		_comprado = false;
-		[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys.<t size='0.5'><br/>Arrow Left-Right to rotate<br/>SPACE to Select<br/>ENTER to Exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
+		[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys<t size='0.5'><br/>[LEFT/RIGHT ARROW] to rotate<br/>[SPACE] to place<br/>[ENTER] to exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
 		if (_this select 1 == 57) then
 			{
 			_salir = true;
@@ -68,12 +68,12 @@ garageKeys = (findDisplay 46) displayAddEventHandler ["KeyDown",
 				{
 				if (garageVeh distance [0,0,1000] < 1500) then
 					{
-					["<t size='0.6'>The current position is not suitable for the vehicle. Try another",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
+					["<t size='0.6'>The selected position is not suitable for the vehicle!",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
 					}
 				else
 					{
 					comprado = 2;
-					["<t size='0.6'>Vehicle purchased",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
+					["<t size='0.6'>Vehicle purchased!",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
 					};
 				};
 			};
@@ -111,8 +111,8 @@ posicionSel = nil;
 _pos = getPosASL garageVeh;
 _dir = getDir garageVeh;
 deleteVehicle garageVeh;
-if !(player inArea _cercano) then {hint "You need to be close to one of your garrisons to be able to buy a vehicle";["",0,0,5,0,0,4] spawn bis_fnc_dynamicText; comprado = nil;garageVeh = nil};
-if ([player,300] call A3A_fnc_enemyNearCheck) then {comprado = 0; hint "You cannot buy vehicles with enemies nearby"};
+if !(player inArea _cercano) then {hint "You need to be near a friendly garrison to buy a vehicle!";["",0,0,5,0,0,4] spawn bis_fnc_dynamicText; comprado = nil;garageVeh = nil};
+if ([player,300] call A3A_fnc_enemyNearCheck) then {comprado = 0; hint "You cannot buy vehicles with enemies nearby!"};
 if (comprado != 2) exitWith {comprado = nil;garageVeh = nil};
 waitUntil {isNull garageVeh};
 garageVeh = nil;

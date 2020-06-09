@@ -18,7 +18,7 @@ if (_x in destroyedCities) then {_popCSAT = _popCSAT + _numCIV};
 } forEach ciudades;
 _popFIA = round _popFIA;
 _popAAF = round _popAAF;
-hint format ["%7\n\nTotal pop: %1\n%6 Support: %2\n%5 Support: %3 \n\nMurdered Pop: %4\n\nClick on the zone",_pop, _popFIA, _popAAF, _popCSAT,nameMalos,nameBuenos,worldName];
+hint format ["%7\n\nTotal Pop: %1\n%6 Support: %2\n%5 Support: %3 \n\nMurdered Pop: %4\n\nClick on the zone",_pop, _popFIA, _popAAF, _popCSAT,nameMalos,nameBuenos,"Chernarus"];
 
 if (!visibleMap) then {openMap true};
 
@@ -47,7 +47,7 @@ while {visibleMap} do
 			_prestigeOPFOR = _datos select 2;
 			_prestigeBLUFOR = _datos select 3;
 			_power = [_sitio] call A3A_fnc_powerCheck;
-			_texto = format ["%1\n\nPop %2\n%6 Support: %3 %5\n%7 Support: %4 %5",[_sitio,false] call A3A_fnc_fn_location,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%",nameMalos,nameBuenos];
+			_texto = format ["%1\n\nPop: %2\n%6 support: %3 %5\n%7 support: %4 %5",[_sitio,false] call A3A_fnc_fn_location,_numCiv,_prestigeOPFOR,_prestigeBLUFOR,"%",nameMalos,nameBuenos];
 			_posicion = getMarkerPos _sitio;
 			_result = "NONE";
 			switch (_power) do

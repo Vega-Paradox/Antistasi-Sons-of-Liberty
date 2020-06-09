@@ -1,14 +1,14 @@
 _unit = _this select 0;
 _tipo = typeOf _unit;
-_loadout = "rhsgref_ins_g_militiaman_mosin";
+_loadout = "rhsgref_nat_rifleman";
 switch _tipo do
 	{
-	case "I_G_officer_F": {_loadout = "rhsgref_ins_g_squadleader"};
-	case "I_G_Soldier_AR_F": {_loadout = "rhsgref_ins_g_machinegunner"};
-	case "I_G_Soldier_LAT2_F": {_loadout = "rhsgref_nat_grenadier_rpg"};
-	case "I_G_medic_F": {_loadout = "rhsgref_ins_g_medic"};
-	case "I_G_engineer_F": {_loadout = "rhsgref_ins_g_engineer"};
-	case "I_G_Soldier_GL_F": {_loadout = "rhsgref_nat_pmil_grenadier"};
+	case "rhsgref_nat_commander": {_loadout = "rhsgref_nat_commander"};
+	case "rhsgref_nat_machinegunner_mg42": {_loadout = "rhsgref_nat_machinegunner_mg42"};
+	case "rhsgref_nat_grenadier_rpg": {_loadout = "rhsgref_nat_grenadier_rpg"};
+	case "rhsgref_nat_medic": {_loadout = "rhsgref_nat_medic"};
+	case "rhsgref_nat_saboteur": {_loadout = "rhsgref_nat_saboteur"};
+	case "rhsgref_nat_grenadier": {_loadout = "rhsgref_nat_grenadier"};
 	case "B_recon_TL_F": {_loadout = NATOSpecOp select 0};
 	case "B_CTRG_Soldier_TL_tna_F": {_loadout = NATOSpecOp select 0};
 	case "I_Soldier_SL_F": {_loadout = NATOSpecOp select 0};

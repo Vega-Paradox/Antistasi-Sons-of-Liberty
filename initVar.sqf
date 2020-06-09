@@ -5,7 +5,7 @@
 //Not commented lines cannot be changed.
 //Don't touch them.
 
-antistasiVersion = "v 1.4.0.2";
+antistasiVersion = "SoL r2.0, A3A v1.4.0.2";
 
 
 debug = false;//debug variable, not useful for everything..
@@ -33,8 +33,8 @@ buenos = side group petros;
 malos = if (buenos == independent) then {west} else {independent};
 muyMalos = east;
 
-colorBuenos = if (buenos == independent) then {"colorBLUFOR"} else {"colorBLUFOR"};
-colorMalos = if (buenos == independent) then {"colorGUER"} else {"colorGUER"};
+colorBuenos = if (buenos == independent) then {"colorGUER"} else {"colorBLUFOR"};
+colorMalos = if (buenos == independent) then {"colorBLUFOR"} else {"colorGUER"};
 colorMuyMalos = "colorOPFOR";
 
 respawnBuenos = if (buenos == independent) then {"respawn_guerrila"} else {"respawn_west"};
@@ -204,7 +204,7 @@ NVGoggles = if (!hayIFA) then {["NVGoggles_OPFOR","NVGoggles_INDEP","O_NVGoggles
 
 arrayCivVeh = if !(hayIFA) then
 	{
-	["C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_01_F","C_SUV_01_F","C_Van_01_box_F","C_Van_01_fuel_F","C_Van_01_transport_F","C_Truck_02_transport_F","C_Truck_02_covered_F","C_Offroad_02_unarmed_F"];
+	["UK3CB_C_Golf","UK3CB_C_Sedan","UK3CB_C_Hatchback","UK3CB_C_Gaz24","UK3CB_C_Lada","UK3CB_C_Skoda","UK3CB_CHC_C_UAZ_Closed","UK3CB_CHC_C_UAZ_Open","UK3CB_C_LandRover_Open","UK3CB_C_LandRover_Closed","UK3CB_C_Datsun_Open","UK3CB_C_Datsun_Closed","UK3CB_C_Hilux_Open","UK3CB_C_Hilux_Closed","UK3CB_C_S1203","C_Van_01_transport_F","C_Van_01_box_F","C_Van_01_fuel_F","UK3CB_CHC_C_V3S_Open","UK3CB_CHC_C_V3S_Closed","UK3CB_CHC_C_V3S_Recovery","UK3CB_CHC_C_V3S_Refuel","UK3CB_C_V3S_Repair","UK3CB_CHC_C_Ural_Open","UK3CB_CHC_C_Ural","UK3CB_CHC_C_Ural_Empty","UK3CB_CHC_C_Ural_Recovery","UK3CB_CHC_C_Ural_Fuel","UK3CB_C_Ural_Repair","UK3CB_C_Kamaz_Open","UK3CB_C_Kamaz_Fuel","UK3CB_C_Kamaz_Repair","UK3CB_C_Tractor","UK3CB_C_Tractor_Old","UK3CB_C_Ikarus","UK3CB_C_Ikarus_RED","UK3CB_UN_I_LR_Open","UK3CB_UN_I_Hilux_Open","UK3CB_UN_I_M998_2DR","UK3CB_UN_I_V3S_Recovery","UK3CB_UN_I_V3S_Open","UK3CB_UN_I_V3S_Closed","UK3CB_UN_I_V3S_Reammo"];
 	}
 else
 	{
@@ -382,7 +382,7 @@ else
 	{
 	if !(hayIFA) then
 		{
-		["C_man_1","C_man_1_1_F","C_man_1_2_F","C_man_1_3_F","C_man_hunter_1_F","C_man_p_beggar_F","C_man_p_beggar_F_afro","C_man_p_fugitive_F","C_man_p_shorts_1_F","C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F","C_man_shorts_1_F","C_man_shorts_2_F","C_man_shorts_3_F","C_man_shorts_4_F","C_scientist_F","C_Orestes","C_Nikos","C_Nikos_aged"]
+		["UK3CB_CHC_C_ACT","UK3CB_CHC_C_BODYG","UK3CB_CHC_C_CIT","UK3CB_CHC_C_COACH","UK3CB_CHC_C_DOC","UK3CB_CHC_C_FUNC","UK3CB_CHC_C_HIKER","UK3CB_CHC_C_LABOUR","UK3CB_CHC_C_POLITIC","UK3CB_CHC_C_PRIEST","UK3CB_CHC_C_PROF","UK3CB_CHC_C_CIV","UK3CB_CHC_C_SPY","UK3CB_CHC_C_VILL","UK3CB_CHC_C_CAN","UK3CB_CHC_C_WOOD","UK3CB_CHC_C_WORKER","C_Man_casual_1_F_euro","C_Man_casual_2_F_euro","C_Man_casual_3_F_euro","C_Journalist_01_War_F"]
 		}
 	else
 		{
@@ -403,7 +403,6 @@ civUniforms = [];
 _uniform = (getUnitLoadout _x select 3) select 0;
 civUniforms pushBackUnique _uniform;
 } forEach arrayCivs;
-
 
 //All weapons, MOD ones included, will be added to this arrays, but it's useless without integration, as if those weapons don't spawn, players won't be able to collect them, and after, unlock them in the arsenal.
 
@@ -510,10 +509,26 @@ timer setVariable [vehCSATPlaneAA,10,true];
 timer setVariable [vehNATOMRLS,0,true];
 timer setVariable [vehCSATMRLS,5,true];
 
+//Dealer: Civ Air
+server setVariable [civairMed,2750,true];//3500
+server setVariable [civairHeavy,3550,true];//4550
+server setVariable [civairHeavy2,3500,true];//4500
+server setVariable [civairScout,3750,true];//5000
+//Dealer: Civ Ground
+server setVariable [civgndBike,50,true];//50
+server setVariable [civgndSedan,150,true];//150
+server setVariable [civgndJeepL,200,true];//250
+server setVariable [civgndJeepH,275,true];//300
+server setVariable [civgndLightTruck,325,true];//450
+server setVariable [civgndCoverTruck,375,true];//550
+server setVariable [civgndRecovTruck,400,true];//575
+server setVariable [civgndRepairTruck,465,true];//600
+server setVariable [civgndFuelTruck,465,true];//675
 
+//Base buy
 server setVariable [civCar,200,true];//200
-server setVariable [civTruck,600,true];//600
-server setVariable [civHeli,5000,true];//5000
+server setVariable [civTruck,265,true];//600
+server setVariable [civHeli,2500,true];//2500
 server setVariable [civBoat,200,true];//200
 server setVariable [vehSDKBike,50,true];//50
 server setVariable [vehSDKLightUnarmed,200,true];//200
@@ -522,11 +537,11 @@ server setVariable [vehSDKTruck,300,true];//300
 {server setVariable [_x,400,true]} forEach [SDKMGStatic,vehSDKBoat,vehSDKRepair];//400
 {server setVariable [_x,800,true]} forEach [SDKMortar,staticATBuenos,staticAABuenos];//800
 server setVariable ["hr",8,true];//initial HR value
-server setVariable ["resourcesFIA",1000,true];//Initial FIA money pool value
+server setVariable ["resourcesFIA",1250,true];//Initial FIA money pool value
 skillFIA = 0;//Initial skill level for FIA soldiers
 prestigeNATO = 5;//Initial Prestige NATO
 prestigeCSAT = 5;//Initial Prestige CSAT
-prestigeOPFOR = 50;//Initial % support for NATO on each city
+prestigeOPFOR = 55;//Initial % support for NATO on each city
 if (not cadetMode) then {prestigeOPFOR = 75};//if you play on vet, this is the number
 prestigeBLUFOR = 0;//Initial % FIA support on each city
 cuentaCA = 600;//600
@@ -603,12 +618,12 @@ if (!activeGREF) then
     }
 else
     {
-    unlockedWeapons = ["rhs_weap_akms","rhs_weap_makarov_pmm","Binocular","rhs_weap_rpg7","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_pp2000_folded","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz","rhs_weap_akmn"];
-    unlockedRifles = ["rhs_weap_akms","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
-    unlockedMagazines = ["rhs_30Rnd_762x39mm","rhs_mag_9x18_12_57N181S","rhs_rpg7_PG7VL_mag","rhsgref_5Rnd_762x54_m38","rhsgref_5Rnd_792x57_kar98k","rhs_mag_rgd5","rhs_mag_9x19mm_7n21_20","rhsgref_20rnd_765x17_vz61","rhsgref_30rnd_1143x23_M1911B_SMG","rhsgref_8Rnd_762x63_M2B_M1rifle","rhs_mag_20Rnd_762x51_m80_fnfal"];
-    initialRifles = ["rhs_weap_akms","rhs_weap_m38_rail","rhs_weap_kar98k","rhs_weap_savz61"];
+    unlockedWeapons = ["Binocular","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_pm63","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33","rhs_weap_type94_new","rhs_weap_savz61_folded"];
+    unlockedRifles = ["rhs_weap_akms","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
+    unlockedMagazines = ["IEDLandSmall_Remote_Mag","DemoCharge_Remote_Mag","rhsgref_1Rnd_Slug","rhsgref_1Rnd_00Buck"];
+    initialRifles = ["rhs_weap_m38","rhs_weap_kar98k","rhs_weap_pm63","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33"];
     unlockedItems = unlockedItems + ["rhs_acc_2dpZenit"];
-    unlockedAT = ["rhs_weap_rpg7"];
+    unlockedAT = ["rhs_weap_panzerfaust60","rhs_weap_rshg2"];
     };
 
 {
@@ -617,7 +632,7 @@ _vest = _loadOut select 4;
 if !(_vest isEqualTo []) then {unlockedItems pushBackUnique (_vest select 0)};
 } forEach [SDKSniper,SDKATman,SDKMedic,SDKMG,SDKExp,SDKGL,SDKMil,SDKSL,SDKEng,[SDKUnarmed],[staticCrewBuenos]];
 
-unlockedBackpacks = if !(hayIFA) then {["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr","rhs_sidor"]} else {["B_LIB_US_M2Flamethrower","B_LIB_SOV_RA_MGAmmoBag_Empty"]}; //Initial Arsenal available backpacks
+unlockedBackpacks = if !(hayIFA) then {["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_cbr","B_LegStrapBag_black_F","rhs_sidor","rhs_rpg_empty","UK3CB_CW_SOV_O_LATE_B_Sidor_RIF"]} else {["B_LIB_US_M2Flamethrower","B_LIB_SOV_RA_MGAmmoBag_Empty"]}; //Initial Arsenal available backpacks
 //lockedMochis = lockedMochis - unlockedBackpacks;
 unlockedOptics = [];
 unlockedMG = [];
@@ -625,7 +640,7 @@ unlockedGL = [];
 unlockedSN = [];
 unlockedAA = [];
 garageIsUsed = false;
-vehInGarage = [];
+vehInGarage = ["C_Offroad_01_F"];
 destroyedBuildings = []; //publicVariable "destroyedBuildings";
 reportedVehs = [];
 hayTFAR = false;

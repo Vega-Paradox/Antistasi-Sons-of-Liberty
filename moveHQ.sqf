@@ -67,7 +67,7 @@ if (count _garrison > 0) then
 	} forEach _garrison;
 	[_hr,_coste] remoteExec ["A3A_fnc_resourcesFIA",2];
 	garrison setVariable ["Synd_HQ",[],true];
-	hint format ["Garrison removed\n\nRecovered Money: %1 €\nRecovered HR: %2",_coste,_hr];
+	hint format ["Garrison removed\n\nRecovered Money: %1 ой\nRecovered HR: %2",_coste,_hr];
 	};
 
 sleep 5;

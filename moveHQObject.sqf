@@ -17,7 +17,14 @@ if (_jugador distance2D _posicion > _size) exitWith {hint "This asset needs to b
 
 _cosa removeAction _id;
 _cosa attachTo [_jugador,[0,2,1]];
-accion = _jugador addAction ["Drop Here", {{detach _x} forEach attachedObjects player; player removeAction accion},nil,0,false,true,"",""];
+accion = if (_cosa == petros) then 
+	{
+		_jugador addAction ["Politely drop here", {{detach _x} forEach attachedObjects player; player removeAction accion},nil,0,false,true,"",""];
+	}
+	else 
+	{
+		_jugador addAction ["Drop here", {{detach _x} forEach attachedObjects player; player removeAction accion},nil,0,false,true,"",""];
+	};
 
 waitUntil {sleep 1; (count attachedObjects _jugador == 0) or (vehicle _jugador != _jugador) or (_jugador distance2D _posicion > (_size-3)) or !([_jugador] call A3A_fnc_canFight) or (!isPlayer _jugador)};
 
@@ -29,7 +36,15 @@ for "_i" from 0 to (_jugador addAction ["",""]) do
 	_jugador removeAction _i;
 	};
 */
-_cosa addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
+
+if (_cosa == petros) then
+	{
+		_cosa addAction ["Politely move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
+	}
+	else 
+	{
+		_cosa addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
+	};
 
 _cosa setPosATL [getPosATL _cosa select 0,getPosATL _cosa select 1,0];
 

@@ -28,7 +28,7 @@ garageVeh = _tipo createVehicleLocal [0,0,1000];
 garageVeh allowDamage false;
 garageVeh enableSimulationGlobal false;
 comprado = 0;
-[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Garage Keys.<t size='0.5'><br/>Arrow Up-Down to Navigate<br/>Arrow Left-Right to rotate<br/>SPACE to Select<br/>ENTER to Exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
+[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys<t size='0.5'><br/>[LEFT/RIGHT ARROW] to rotate<br/>[SPACE] to place<br/>[ENTER] to exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
 hint "Hover your mouse to the desired position. If it's safe and suitable, you will see the vehicle";
 garageKeys = (findDisplay 46) displayAddEventHandler ["KeyDown",
 		{
@@ -81,7 +81,7 @@ garageKeys = (findDisplay 46) displayAddEventHandler ["KeyDown",
 				garageVeh = _tipo createVehicleLocal [0,0,1000];
 				garageVeh allowDamage false;
 				garageVeh enableSimulationGlobal false;
-				[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Garage Keys.<t size='0.5'><br/>Arrow Up-Down to Navigate<br/>Arrow Left-Right to rotate<br/>SPACE to Select<br/>ENTER to Exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
+				[format ["<t size='0.7'>%1<br/><br/><t size='0.6'>Vehicle placement Keys<t size='0.5'><br/>[LEFT/RIGHT ARROW] to rotate<br/>[SPACE] to place<br/>[ENTER] to exit",getText (configFile >> "CfgVehicles" >> typeOf garageVeh >> "displayName")],0,0,5,0,0,4] spawn bis_fnc_dynamicText;
 				};
 			};
 		if (_salir) then
@@ -100,7 +100,7 @@ garageKeys = (findDisplay 46) displayAddEventHandler ["KeyDown",
 				else
 					{
 					comprado = 2;
-					["<t size='0.6'>Vehicle retrieved from Garage",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
+					["<t size='0.6'>Vehicle retrieved from garage!",0,0,3,0,0,4] spawn bis_fnc_dynamicText;
 					};
 				};
 			};

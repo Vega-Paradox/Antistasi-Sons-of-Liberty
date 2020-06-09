@@ -74,7 +74,7 @@ class Params
     {
         title = "Game Mode"; // Param name visible in the list
         values[] = {1,2,3,4}; // Values; must be integers; has to have the same number of elements as 'texts'
-        texts[] = {"Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"}; // Description of each selectable item
+        texts[] = {"DPVC (Reb) vs CDF (Gov) vs RAF (Inv) - (RECOMMENDED!)","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"}; // Description of each selectable item
         default = 1; // Default value; must be listed in 'values' array, otherwise 0 is used
         // Default values that are not whole numbers do not work. Param will default to 0 (or 1 if defined)
     };
@@ -155,7 +155,7 @@ class Params
         title = "Rate of Civ Traffic";
         values[] = {0.5,1,3};
         texts[] = {"Low","Medium","JAM"};
-        default = 0.5;
+        default = 1;
         //file = "setViewDistance.sqf"; // (Optional) Script [[call]]ed when player joins, selected value is passed as an argument
     };
     class memberSlots
@@ -180,6 +180,13 @@ class Params
         values[] = {0,1};
         texts[] = {"No","Yes"};
         default = 1;
+    };
+    class staminaDisable   //Stamina toggle parameter
+    {
+        title = "Disable Stamina";
+        values[] = {0,1};
+        texts[] = {"No","Yes"};
+        default = 0;
     };
 };
 

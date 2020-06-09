@@ -1,7 +1,21 @@
 //Arma 3 - Antistasi - Warlords of the Pacific by Barbolani
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
 enableSaving [false,false];
-mapa setObjectTexture [0,"pic.jpg"];
+//Object textures
+mapa setObjectTextureGlobal [0,"Textures\Objects\mapB.paa"];
+cajaVeh setObjectTextureGlobal [1, "Textures\Objects\base_ammo_dpvc.jpg"];
+//Flag textures
+bandera setFlagTexture "Textures\Flags\flag_dpvc.paa";
+dealCivAir_f1 setFlagTexture "Textures\Flags\flag_purple.paa";
+dealCivAir_f2 setFlagTexture "Textures\Flags\flag_purple.paa";
+dealCivGnd_f1 setFlagTexture "Textures\Flags\flag_purple.paa";
+dealCivGnd_f2 setFlagTexture "Textures\Flags\flag_purple.paa";
+dealCivGnd_f3 setFlagTexture "Textures\Flags\flag_purple.paa";
+dealMilAnt_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
+dealMilBlk_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
+dealTestA setFlagTexture "Textures\Flags\flag_yellow.paa";
+dealTestB setFlagTexture "Textures\Flags\flag_purple.paa";
+
 if (isServer and (isNil "serverInitDone")) then {skipTime random 24};
 
 if (!isMultiPlayer) then
@@ -13,7 +27,7 @@ if (!isMultiPlayer) then
     respawnMalos setMarkerAlpha 0;
     "respawn_east" setMarkerAlpha 0;
     [] execVM "briefing.sqf";
-    diag_log format ["Antistasi SP. InitVar done. Version: %1",antistasiVersion];
+    diag_log format ["Antistasi SP, InitVar done, Version: %1",antistasiVersion];
     _nul = [] execVM "musica.sqf";
     {if (/*(side _x == buenos) and */(_x != comandante) and (_x != Petros)) then {_grupete = group _x; deleteVehicle _x; deleteGroup _grupete}} forEach allUnits;
     _serverHasID = profileNameSpace getVariable ["ss_ServerID",nil];
@@ -25,14 +39,14 @@ if (!isMultiPlayer) then
     serverID = profileNameSpace getVariable "ss_ServerID";
     publicVariable "serverID";
     call compile preprocessFileLineNumbers "initFuncs.sqf";
-    diag_log "Antistasi SP. Funcs init finished";
+    diag_log "Antistasi SP, Funcs init finished";
     call compile preprocessFileLineNumbers "initZones.sqf";//this is the file where you can transport Antistasi to another island
-    diag_log "Antistasi SP. Zones init finished";
+    diag_log "Antistasi SP, Zones init finished";
     [] execVM "initPetros.sqf";
 
     hcArray = [];
     serverInitDone = true;
-    diag_log "Antistasi SP. serverInitDone is true. Arsenal loaded";
+    diag_log "Antistasi SP, serverInitDone = true, Arsenal loaded";
     _nul = [] execVM "modBlacklist.sqf";
     autoSave = false;
     membershipEnabled = false;
@@ -66,10 +80,4 @@ if (!isMultiPlayer) then
     deleteMarker "respawn_east";
     if (buenos == independent) then {deleteMarker "respawn_west"} else {deleteMarker "respawn_guerrila"};
     };
-
-if (local player) then { 
-  player enableFatigue false; 
-  player addMPEventhandler ["MPRespawn", {player enableFatigue false}]; 
-};
-
 

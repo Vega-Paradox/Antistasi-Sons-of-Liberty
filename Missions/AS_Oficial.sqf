@@ -17,7 +17,7 @@ _fechalim = [date select 0, date select 1, date select 2, date select 3, (date s
 _fechalimnum = dateToNumber _fechalim;
 
 _nombredest = [_marcador] call A3A_fnc_localizar;
-_nombreBando = if (_lado == malos) then {"NATO"} else {"CSAT"};
+_nombreBando = if (_lado == malos) then {"CDF"} else {"RAF"};
 
 [[buenos,civilian],"AS",[format ["A %4 officer is inspecting %1. Go there and kill him before %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,_nombreBando],"Kill the Officer",_marcador],_posicion,false,0,true,"Kill",true] call BIS_fnc_taskCreate;
 misiones pushBack ["AS","CREATED"]; publicVariable "misiones";

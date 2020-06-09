@@ -20,57 +20,64 @@ switch _tipo do
 	{
 	case "ST":
 		{
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
+		if (count (nearestTerrainObjects [player, ["HOUSE"], 70]) > 0) then
 			{
 			_clase = selectRandom ["Land_GarbageWashingMachine_F","Land_JunkPile_F","Land_Barricade_01_4m_F"];
 			}
 		else
 			{
-			if (count (nearestTerrainObjects [player,["tree"],70]) > 8) then
+			if (count (nearestTerrainObjects [player,["TREE"],70]) > 3) then
 				{
 				_clase = "Land_WoodPile_F";
 				}
 			else
 				{
-				_clase = "CraterLong_small";
+				_clase = "Fort_EnvelopeSmall";
 				};
 			};
 		};
 	case "MT":
 		{
 		_tiempo = 60;
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
+		if (count (nearestTerrainObjects [player, ["HOUSE"], 70]) > 0) then
 			{
 			_clase = "Land_Barricade_01_10m_F";
 			}
 		else
 			{
-			if (count (nearestTerrainObjects [player,["tree"],70]) > 8) then
+			if (count (nearestTerrainObjects [player,["TREE"],70]) > 3) then
 				{
 				_clase = "Land_WoodPile_large_F";
 				}
 			else
 				{
-				_clase = selectRandom ["Land_BagFence_01_long_green_F","Land_SandbagBarricade_01_half_F"];
+				_clase = "Fort_EnvelopeBig"
 				};
 			};
 		};
 	case "RB":
 		{
 		_tiempo = 100;
-		if (count (nearestTerrainObjects [player, ["House"], 70]) > 3) then
+		if (count (nearestTerrainObjects [player, ["HOUSE"], 70]) > 2) then
 			{
-			_clase = "Land_Tyres_F";
+			_clase = selectRandom ["Land_Tyre_01_line_x5_F","Land_Tyres_F","Land_JunkPile_F","Land_GarbageBags_F"];
 			}
 		else
 			{
-			_clase = "Land_TimberPile_01_F";
+			if (count (nearestTerrainObjects [player,["TREE"],70]) > 3) then
+				{
+				_clase = selectRandom ["Land_TimberPile_05_F","Land_WoodPile_02_F"];
+				}
+			else
+				{
+				_clase = "Land_SandbagBarricade_01_half_F"
+				};
 			};
 		};
 	case "SB":
 		{
 		_tiempo = 60;
-		_clase = "Land_BagBunker_01_small_green_F";
+		_clase = "Land_fortified_nest_small";
 		_coste = 100;
 		};
 	case "CB":
@@ -92,7 +99,7 @@ if ((_tipo == "SB") or (_tipo == "CB")) then
 	if (_coste > _resourcesFIA) then
 		{
 		_salir = true;
-		_texto = format ["You do not have enough money for this construction (%1 € needed)",_coste]
+		_texto = format ["You do not have enough money for this construction (%1 ой needed)",_coste]
 		}
 	else
 		{

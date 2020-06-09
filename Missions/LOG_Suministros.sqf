@@ -15,7 +15,7 @@ if (hayIFA) then {_tiempolim = _tiempolim * 2};
 _fechalim = [date select 0, date select 1, date select 2, date select 3, (date select 4) + _tiempolim];
 _fechalimnum = dateToNumber _fechalim;
 _nombredest = [_marcador] call A3A_fnc_localizar;
-_taskDescription = format ["%1 population is in need of supplies. We may improve our relationship with that city if we are the ones who provide them. I reserved a transport truck with supplies near our HQ. Drive the transport truck to %1 city center. Hold it there for 2 minutes and it's done. Do this before %2:%3. You may allways sell those supplies here, that money can be welcome. Just sell the truck and job is done",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4];
+_taskDescription = format ["%1 population is in desperate need of supplies! We would certainly improve our relationship with the city if we are the ones who provide them with those supplies. I have reserved a transport truck with supplies near our HQ. Drive the transport truck to %1 city center. Hold it there for 2 minutes and it's done. Do this before %2:%3. You may sell the supplies here, that money is certainly welcome. Sell the truck and job is done.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4];
 
 [[buenos,civilian],"LOG",[_taskDescription,"City Supplies",_marcador],_posicion,false,0,true,"Heal",true] call BIS_fnc_taskCreate;
 misiones pushBack ["LOG","CREATED"]; publicVariable "misiones";
@@ -27,7 +27,7 @@ _camion allowDamage false;
 _camion call jn_fnc_logistics_addAction;
 _camion addAction ["Delivery infos",
 	{
-		_text = format ["Deliver this box to %1, unload it to start distributing to people",(_this select 0) getVariable "destino"]; //This need a rework
+		_text = format ["Deliver this box to %1, unload it to start distributing supplies to people.",(_this select 0) getVariable "destino"]; //This need a rework
 		_text remoteExecCall ["hint",_this select 2];	//This need a rework
 	},
 	nil,
@@ -55,7 +55,7 @@ else
 	{
 	_cuenta = 120*_bonus;//120
 	[[_posicion,malos,"",false],"A3A_fnc_patrolCA"] remoteExec ["A3A_fnc_scheduler",2];
-	["TaskFailed", ["", format ["%2 deploying supplies in %1",_nombredest,nameBuenos]]] remoteExec ["BIS_fnc_showNotification",malos];
+	["TaskFailed", ["", format ["%2 is deploying supplies in %1",_nombredest,nameBuenos]]] remoteExec ["BIS_fnc_showNotification",malos];
 	{_amigo = _x;
 	if (captive _amigo) then
 		{

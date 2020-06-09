@@ -10,7 +10,7 @@ _fechalim = [date select 0, date select 1, date select 2, date select 3, (date s
 _fechalimnum = dateToNumber _fechalim;
 _nombredest = [_marcador] call A3A_fnc_localizar;
 
-[[buenos,civilian],"REP",[format ["%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished on %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
+[[buenos,civilian],"REP",[format ["The %4 is rebuilding a radio tower in %1. If we want to keep enemy comms down, the repairs must be stopped. Destroy the repair truck parked nearby or capture the zone. Repairs will be finished at %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,false,0,true,"Destroy",true] call BIS_fnc_taskCreate;
 misiones pushBack ["REP","CREATED"]; publicVariable "misiones";
 _camionCreado = false;
 
@@ -43,7 +43,7 @@ if (spawner getVariable _marcador != 2) then
 
 	if (not alive _veh) then
 		{
-		["REP",[format ["%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished on %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
+		["REP",[format ["The %4 is rebuilding a radio tower in %1. If we want to keep enemy comms down, the repairs must be stopped. Destroy the repair truck parked nearby or capture the zone. Repairs will be finished at %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
 		[2,0] remoteExec ["A3A_fnc_prestige",2];
 		[1200] remoteExec ["A3A_fnc_timingCA",2];
 		{if (_x distance _veh < 500) then {[10,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -54,7 +54,7 @@ if (dateToNumber date > _fechalimnum) then
 	{
 	if (lados getVariable [_marcador,sideUnknown] == buenos) then
 		{
-		["REP",[format ["%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished on %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
+		["REP",[format ["The %4 is rebuilding a radio tower in %1. If we want to keep enemy comms down, the repairs must be stopped. Destroy the repair truck parked nearby or capture the zone. Repairs will be finished at %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"SUCCEEDED","Destroy"] call A3A_fnc_taskUpdate;
 		[2,0] remoteExec ["A3A_fnc_prestige",2];
 		[1200] remoteExec ["A3A_fnc_timingCA",2];
 		{if (_x distance _veh < 500) then {[10,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -62,7 +62,7 @@ if (dateToNumber date > _fechalimnum) then
 		}
 	else
 		{
-		["REP",[format ["%4 is rebuilding a radio tower in %1. If we want to keep up the enemy comms breakdown, the work must be stopped. Destroy the repair truck parked nearby or capture the zone. Work will be finished on %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"FAILED","Destroy"] call A3A_fnc_taskUpdate;
+		["REP",[format ["The %4 is rebuilding a radio tower in %1. If we want to keep enemy comms down, the repairs must be stopped. Destroy the repair truck parked nearby or capture the zone. Repairs will be finished at %2:%3.",_nombredest,numberToDate [2035,_fechalimnum] select 3,numberToDate [2035,_fechalimnum] select 4,nameMalos],"Tower Rebuild Disrupt",_marcador],_posicion,"FAILED","Destroy"] call A3A_fnc_taskUpdate;
 		//[5,0,_posicion] remoteExec ["A3A_fnc_citySupportChange",2];
 		[-600] remoteExec ["A3A_fnc_timingCA",2];
 		[-10,theBoss] call A3A_fnc_playerScoreAdd;
@@ -76,7 +76,7 @@ if (dateToNumber date > _fechalimnum) then
 	_mrkfin = createMarker [format ["Ant%1", count antenas], _posicion];
 	_mrkfin setMarkerShape "ICON";
 	_mrkfin setMarkerType "loc_Transmitter";
-	_mrkfin setMarkerColor "ColorBlack";
+	_mrkfin setMarkerColor "ColorGrey";
 	_mrkfin setMarkerText "Radio Tower";
 	mrkAntenas pushBack _mrkfin;
 	publicVariable "mrkAntenas";

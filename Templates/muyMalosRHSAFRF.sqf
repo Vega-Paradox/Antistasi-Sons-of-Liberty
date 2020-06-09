@@ -68,5 +68,5 @@ itemsAAF = itemsAAF + ["rhs_acc_2dpZenit","rhs_acc_2dpZenit_ris","rhs_acc_uuk","
 
 lamparaMuyMalos = "rhs_acc_2dpZenit";
 flagCSATmrk = "Faction_RU";
-nameMuyMalos = "AFRF";
-if (isServer) then {"CSAT_carrier" setMarkerText "VMF Carrier"};
+nameMuyMalos = "RAF";
+if (isServer) then {"CSAT_carrier" setMarkerText "RAF Carrier 'эмиссар' Battle Group"};

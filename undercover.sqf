@@ -1,26 +1,26 @@
 private ["_player"];
 if (player != player getVariable ["owner",player]) exitWith {hint "You cannot go Undercover while you are controlling AI"};
 _player = player getVariable ["owner",player];
-if (captive _player) exitWith {hint "You are Undercover already"};
+if (captive _player) exitWith {hint "You are already undercover."};
 
 private ["_compromised","_cambiar","_aeropuertos","_arrayCivVeh","_player","_size","_base"];
 
 _cambiar = "";
 _aeropuertos = aeropuertos + puestos + (controles select {isOnRoad (getMarkerPos _x)});
 _aeropuertos1 = aeropuertos;
-_arrayCivVeh = arrayCivVeh + [civHeli] + civBoats;
+_arrayCivVeh = str([arrayCivVeh, civBoats, civairMed, civairHeavy, civairHeavy2, civairScout, civHeli]);
 _compromised = _player getVariable "compromised";
 
 if (vehicle _player != _player) then
 	{
 	if (not(typeOf(vehicle _player) in _arrayCivVeh)) then
 		{
-		hint "You are not in a civilian vehicle";
+		hint "You are not in a civilian vehicle!";
 		_cambiar = "Init"
 		};
 	if (vehicle _player in reportedVehs) then
 		{
-		hint "This vehicle has been reported to the enemy. Change or renew your vehicle in the Garage to go Undercover";
+		hint "Your vehicle has been reported to the enemy. Renew your vehicle in the garage or find a new one to go undercover again.";
 		_cambiar = "Init";
 		};
 	}
@@ -28,12 +28,12 @@ else
 	{
 	if ((primaryWeapon _player != "") or (secondaryWeapon _player != "") or (handgunWeapon _player != "") or (vest _player != "") or (getNumber (configfile >> "CfgWeapons" >> headgear _player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 2) or (hmd _player != "") or (not(uniform _player in civUniforms))) then
 		{
-		hint "You cannot go Undercover while:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a mil uniform";
+		hint "You cannot go undercover while:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a military uniform";
 		_cambiar = "Init";
 		};
 	if (dateToNumber date < _compromised) then
 		{
-		hint "You have been reported in the last 30 minutes therefore you cannot go Undercover";
+		hint "You have been reported in the last 30 minutes, so you cannot go Undercover.";
 		_cambiar = "Init";
 		};
 	};
@@ -42,7 +42,7 @@ if (_cambiar != "") exitWith {};
 
 if ({((side _x== muyMalos) or (side _x== malos)) and (((_x knowsAbout _player > 1.4) and (_x distance _player < 500)) or (_x distance _player < 350))} count allUnits > 0) exitWith
 	{
-	hint "You cannot go Undercover while enemies are spotting you";
+	hint "You cannot go undercover while enemies are spotting you!";
 	if (vehicle _player != _player) then
 		{
 		{
@@ -55,7 +55,7 @@ _base = [_aeropuertos,_player] call BIS_fnc_nearestPosition;
 _size = [_base] call A3A_fnc_sizeMarker;
 if ((_player distance getMarkerPos _base < _size*2) and (not(lados getVariable [_base,sideUnknown] == buenos))) exitWith {hint "You cannot go Undercover near Airports, Outposts or Roadblocks"};
 
-["Undercover ON",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
+["You are <t color='#1DA81D'>UNDERCOVER</t>",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
 
 [_player,true] remoteExec ["setCaptive",0,_player];
 _player setCaptive true;
@@ -174,7 +174,7 @@ if (vehicle _player != _player) then
 	{if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [_player]);
 	};
 
-["Undercover OFF",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
+["You are <t color='#A8241D'>EXPOSED</t>",0,0,4,0,0,4] spawn bis_fnc_dynamicText;
 [] spawn A3A_fnc_statistics;
 switch _cambiar do
 	{
@@ -196,24 +196,24 @@ switch _cambiar do
 	case "VCompromised": {hint "You entered in a reported vehicle"};
 	case "SpotBombTruck":
 		{
-		hint "Explosives have been spotted on your vehicle";
+		hint "Explosives have been discovered on your vehicle!";
 		reportedVehs pushBackUnique (vehicle _player); publicVariable "reportedVehs";
 		};
 	case "Carretera":
 		{
-		hint "You went too far away from any roads and have been spotted";
+		hint "You went too far away from roads and have been spotted!";
 		reportedVehs pushBackUnique (vehicle _player); publicVariable "reportedVehs";
 		};
-	case "Vestido": {hint "You cannot stay Undercover while:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a mil uniform"};
+	case "Vestido": {hint "You cannot stay undercover while:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a military uniform"};
 	case "Vestido2":
 		{
-		hint "You cannot stay Undercover while showing:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a mil uniform\n\nThe enemy added you to their Wanted List";
+		hint "You cannot go undercover while:\n\nA weapon is visible\nWearing a vest\nWearing a helmet\nWearing NVGs\nWearing a military uniform\n\nThe enemy added you to their wanted list!";
 		_player setVariable ["compromised",dateToNumber [date select 0, date select 1, date select 2, date select 3, (date select 4) + 30]];
 		};
-	case "Compromised": {hint "You left your vehicle and you are still on the Wanted List"};
+	case "Compromised": {hint "You left your vehicle while you are still on the enemy's wanted list!"};
 	case "Distancia":
 		{
-		hint "You have gotten too close to an enemy Base, Outpost or Roadblock";
+		hint "You are too close to an enemy installation!";
 		//_compromised = _player getVariable "compromised";
 		if (vehicle _player != _player) then
 			{
@@ -227,13 +227,13 @@ switch _cambiar do
 		};
 	case "NoFly":
 		{
-		hint "You have gotten too close to an enemy Airbase no-fly zone";
+		hint "You are too close to an enemy no-fly zone!";
 		//_compromised = _player getVariable "compromised";
 		reportedVehs pushBackUnique (vehicle _player); publicVariable "reportedVehs";
 		};
 	case "Control":
 		{
-		hint "The Roadblock Garrison has recognised you";
+		hint "The roadblock garrison recognizes you!";
 		//_compromised = _player getVariable "compromised";
 		reportedVehs pushBackUnique (vehicle _player); publicVariable "reportedVehs";
 		};

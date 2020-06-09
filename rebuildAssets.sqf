@@ -1,7 +1,7 @@
 
 _resourcesFIA = server getVariable "resourcesFIA";
 
-if (_resourcesFIA < 5000) exitWith {hint "You do not have enough money to rebuild any Asset. You need 5.000 €"};
+if (_resourcesFIA < 5000) exitWith {hint "You do not have enough money to rebuild any Asset. You need 5.000 ой"};
 
 _destroyedCities = destroyedCities - ciudades;
 
@@ -73,7 +73,7 @@ else
 	_mrkfin = createMarker [format ["Ant%1", count antenas], _antenaMuerta];
 	_mrkfin setMarkerShape "ICON";
 	_mrkfin setMarkerType "loc_Transmitter";
-	_mrkfin setMarkerColor "ColorBlack";
+	_mrkfin setMarkerColor "ColorGrey";
 	_mrkfin setMarkerText "Radio Tower";
 	mrkAntenas pushBack _mrkfin;
 	publicVariable "mrkAntenas";

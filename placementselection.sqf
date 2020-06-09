@@ -92,7 +92,7 @@ if (visiblemap) then
 		grupoPetros = createGroup buenos;
 		publicVariable "grupoPetros";
         petros = grupoPetros createUnit [tipoPetros, _posicionTel, [], 0, "NONE"];
-        grupoPetros setGroupId ["Maru","GroupColor4"];
+        grupoPetros setGroupId ["OJ","GroupColor4"];
         petros setIdentity "amiguete";
         if (worldName == "Tanoa") then {petros setName "Maru"} else {petros setName "Petros"};
         petros disableAI "MOVE";
@@ -105,7 +105,7 @@ if (visiblemap) then
 	respawnBuenos setMarkerPos _posicionTel;
 	[respawnBuenos,1] remoteExec ["setMarkerAlphaLocal",[buenos,civilian]];
 	[respawnBuenos,0] remoteExec ["setMarkerAlphaLocal",[malos,muyMalos]];
-	if (isMultiplayer) then {hint "Please wait while moving HQ Assets to selected position";sleep 5};
+	if (isMultiplayer) then {hint "Please HQ assets are moved to the selected position.";sleep 5};
 	_pos = [_posicionTel, 3, getDir petros] call BIS_Fnc_relPos;
 	fuego setPos _pos;
 	_rnd = getdir Petros;

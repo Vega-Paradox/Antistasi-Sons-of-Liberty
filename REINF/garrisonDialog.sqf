@@ -55,7 +55,7 @@ if (_tipo == "rem") then
 		{if (_x getVariable ["marcador",""] == _cercano) then {deleteVehicle _x}} forEach allUnits;
 		};
 	[_cercano] call A3A_fnc_mrkUpdate;
-	hint format ["Garrison removed\n\nRecovered Money: %1 €\nRecovered HR: %2",_coste,_hr];
+	hint format ["Garrison removed\n\nRecovered Money: %1 ой\nRecovered HR: %2",_coste,_hr];
 	_nul=CreateDialog "build_menu";
 	}
 else
@@ -73,20 +73,20 @@ else
 	if (str (_display) != "no display") then
 		{
 		_ChildControl = _display displayCtrl 104;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKMil select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKMil select 0)];
 		_ChildControl = _display displayCtrl 105;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKMG select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKMG select 0)];
 		_ChildControl = _display displayCtrl 126;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKMedic select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKMedic select 0)];
 		_ChildControl = _display displayCtrl 107;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKSL select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKSL select 0)];
 		_ChildControl = _display displayCtrl 108;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",(server getVariable staticCrewBuenos) + ([SDKMortar] call A3A_fnc_vehiclePrice)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",(server getVariable staticCrewBuenos) + ([SDKMortar] call A3A_fnc_vehiclePrice)];
 		_ChildControl = _display displayCtrl 109;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKGL select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKGL select 0)];
 		_ChildControl = _display displayCtrl 110;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKSniper select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKSniper select 0)];
 		_ChildControl = _display displayCtrl 111;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKATman select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 ой",server getVariable (SDKATman select 0)];
 		};
 	};

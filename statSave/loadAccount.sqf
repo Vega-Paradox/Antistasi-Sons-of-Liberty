@@ -254,9 +254,66 @@ if (isServer and !_byPassServer) then
 			_nul = [_x] call A3A_fnc_crearControles;
 			};
 		} forEach puertos;
+
+		{
+		_pos = getMarkerPos _x;
+		_dmrk = createMarker [format ["Dum%1",_x], _pos];
+		_dmrk setMarkerShape "ICON";
+		_garrNum = [_x] call A3A_fnc_garrisonSize;
+		_garrNum = _garrNum / 8;
+		_garrison = [];
+		_dmrk setMarkerType "c_plane";
+		_dmrk setMarkerText "Aircrafts Dealer";
+		_dmrk setMarkerColor "ColorCIV";
+		} forEach dealCivAir;
+		{
+		_pos = getMarkerPos _x;
+		_dmrk = createMarker [format ["Dum%1",_x], _pos];
+		_dmrk setMarkerShape "ICON";
+		_garrNum = random [2, 4, 6];
+		_garrison = ["UK3CB_CHC_C_CIV"];
+		_dmrk setMarkerType "c_car";
+		_dmrk setMarkerText "Automotive Retailer";
+		_dmrk setMarkerColor "ColorCIV";
+		} forEach dealCivGnd;
+
+		{
+		_pos = getMarkerPos _x;
+		_dmrk = createMarker [format ["Dum%1",_x], _pos];
+		_dmrk setMarkerShape "ICON";
+		_garrNum = random [2, 3, 5];
+		_garrison = selectRandom arrayMilitia;
+		_dmrk setMarkerType "n_Ordnance";
+		_dmrk setMarkerText "Black Market Retailer";
+		_dmrk setMarkerColor "ColorUNKNOWN";
+		} forEach dealMilBlk;
+		{
+		_pos = getMarkerPos _x;
+		_dmrk = createMarker [format ["Dum%1",_x], _pos];
+		_dmrk setMarkerShape "ICON";
+		_garrNum = [_x] call A3A_fnc_garrisonSize;
+		_garrNum = _garrNum / 8;
+		_garrison = [];
+		_dmrk setMarkerType "n_art";
+		_dmrk setMarkerText "Military Antiques Retailer";
+		_dmrk setMarkerColor "ColorUNKNOWN";
+		} forEach dealMilAnt;
+		{
+		_pos = getMarkerPos _x;
+		_dmrk = createMarker [format ["Dum%1",_x], _pos];
+		_dmrk setMarkerShape "ICON";
+		_garrNum = [_x] call A3A_fnc_garrisonSize;
+		_garrNum = _garrNum / 8;
+		_garrison = [];
+		_dmrk setMarkerType "n_mortar";
+		_dmrk setMarkerText "Chernarus Gun Club";
+		_dmrk setMarkerColor "ColorUNKNOWN";
+		} forEach dealMilWep;
+
 		lados setVariable ["NATO_carrier",malos,true];
 		lados setVariable ["CSAT_carrier",muyMalos,true];
 		};
+
 	statsLoaded = 0; publicVariable "statsLoaded";
 	placementDone = true; publicVariable "placementDone";
 	petros allowdamage true;

@@ -207,6 +207,7 @@ class A3A
         class addBombRun {file="REINF\addBombRun.sqf";};
         class addFIAsquadHC {file="REINF\addFIAsquadHC.sqf";};
         class addFIAveh {file="REINF\addFIAveh.sqf";};
+        class addFIAVENDveh {file="REINF\addFIAVENDveh.sqf";};
         class addSquadVeh {file="REINF\addSquadVeh.sqf";};
         class autoGarrison {file="REINF\autoGarrison.sqf";};
         class buildMinefield {file="REINF\buildMinefield.sqf";};

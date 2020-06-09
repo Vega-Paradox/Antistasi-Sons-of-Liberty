@@ -61,7 +61,7 @@ else
             {
             aeropuertos = ["airport","airport_1","airport_2"];//airports
 			spawnPoints = ["spawnPoint","spawnPoint_1","spawnPoint_2","spawnPoint_3","spawnPoint_4"];
-			recursos = ["resource","resource_1","resource_2","resource_3","resource_4","resource_5","resource_6","resource_7"];//economic resources
+			recursos = ["resource","resource_1","resource_2","resource_3","resource_4","resource_5","resource_6","resource_7","resource_8","resource_9","resource_10","resource_11","resource_12","resource_13","resource_14","resource_15","resource_16"];//economic resources
 			fabricas = ["factory","factory_1","factory_2","factory_3","factory_4"];//factories
 			puestos = ["puesto","puesto_1","puesto_2","puesto_3","puesto_4","puesto_5","puesto_6","puesto_7","puesto_8","puesto_9","puesto_10","puesto_11","puesto_12","puesto_13","puesto_14","puesto_15","puesto_16","Puesto_17","puesto_18"];//any small zone with mil buildings
 			puertos = ["puerto","puerto_1","puerto_2","puerto_3","puerto_4"];//seaports, adding a lot will affect economics, 5 is ok
@@ -69,6 +69,11 @@ else
 			seaMarkers = ["seaPatrol","seaPatrol_1","seaPatrol_2","seaPatrol_3","seaPatrol_4","seaPatrol_5","seaPatrol_6","seaPatrol_7","seaPatrol_8","seaPatrol_9","seaPatrol_10","seaPatrol_11","seaPatrol_12","seaPatrol_13","seaPatrol_14","seaPatrol_15","seaPatrol_16","seaPatrol_17","seaPatrol_18","seaPatrol_19","seaPatrol_20","seaPatrol_21"];
 			seaSpawn = ["seaSpawn","seaSpawn_1","seaSpawn_2","seaSpawn_3","seaSpawn_4","seaSpawn_5","seaSpawn_6","seaSpawn_7","seaSpawn_8","seaSpawn_9","seaSpawn_10","seaSpawn_11","seaSpawn_12","seaSpawn_13","seaSpawn_14","seaSpawn_15","seaSpawn_16","seaSpawn_17","seaSpawn_18","seaSpawn_19","seaSpawn_20","seaSpawn_21","seaSpawn_22","seaSpawn_23","seaSpawn_24","seaSpawn_25","seaSpawn_26","seaSpawn_27","seaSpawn_28","seaSpawn_29","seaSpawn_30","seaSpawn_31","seaSpawn_32"];
 			seaAttackSpawn = ["seaAttackSpawn","seaAttackSpawn_1","seaAttackSpawn_2","seaAttackSpawn_3","seaAttackSpawn_4","seaAttackSpawn_5","seaAttackSpawn_6","seaAttackSpawn_7","seaAttackSpawn_8","seaAttackSpawn_9","seaAttackSpawn_10"];
+            dealCivAir = ["dealCivAir_1","dealCivAir_2"];
+            dealCivGnd = ["dealCivGnd_1","dealCivGnd_2","dealCivGnd_3"];
+            dealMilBlk = ["dealMilBlk_1"];
+            dealMilAnt = ["dealMilAnt_1"];
+            dealMilWep = ["dealMilWep_1"];
 			{
             _name = text _x;
             if ((_name != "Magos") AND !(_name == "")) then
@@ -96,7 +101,7 @@ defaultControlIndex = (count controles) - 1;
 puestosFIA = [];
 destroyedCities = [];
 garrison setVariable ["Synd_HQ",[],true];
-marcadores = aeropuertos + recursos + fabricas + puestos + puertos + controles + ["Synd_HQ"];
+marcadores = aeropuertos + recursos + fabricas + puestos + puertos + controles + dealCivAir + dealCivGnd + dealMilBlk + dealMilAnt + dealMilWep + ["Synd_HQ"];
 {_x setMarkerAlpha 0;
 spawner setVariable [_x,2,true];
 } forEach marcadores;
@@ -218,7 +223,7 @@ else
             _mrkfin = createMarker [format ["Ant%1", _x], position _x];
             _mrkfin setMarkerShape "ICON";
             _mrkfin setMarkerType "loc_Transmitter";
-            _mrkfin setMarkerColor "ColorBlack";
+            _mrkfin setMarkerColor "ColorGrey";
             _mrkfin setMarkerText "Radio Tower";
             mrkAntenas pushBack _mrkfin;
             _x addEventHandler ["Killed",
@@ -255,7 +260,7 @@ if (count _posAntenas > 0) then
                 _mrkfin = createMarker [format ["Ant%1", _i], _posantenas select _i];
                 _mrkfin setMarkerShape "ICON";
                 _mrkfin setMarkerType "loc_Transmitter";
-                _mrkfin setMarkerColor "ColorBlack";
+                _mrkfin setMarkerColor "ColorGrey";
                 _mrkfin setMarkerText "Radio Tower";
                 mrkAntenas pushBack _mrkfin;
                 _antena addEventHandler ["Killed",
@@ -317,4 +322,7 @@ publicVariable "mrkAntenas";
 publicVariable "bancos";
 publicVariable "seaSpawn";
 publicVariable "seaAttackSpawn";
+publicVariable "dealCivAir";
+publicVariable "dealCivGnd";
+publicVariable "dealMilGnd";
 publicVariable "defaultControlIndex";

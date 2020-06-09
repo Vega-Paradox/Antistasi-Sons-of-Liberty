@@ -65,7 +65,7 @@ if ((spawner getVariable _marcador != 2) and _frontera) then
 		{if ((position _x) distance _posicion > _dist) then {_roadcon = _x}} forEach _roadscon;
 		_dirveh = [_roadcon, _road] call BIS_fnc_DirTo;
 		_pos = [getPos _road, 7, _dirveh + 270] call BIS_Fnc_relPos;
-		_bunker = "Land_BagBunker_01_small_green_F" createVehicle _pos;
+		_bunker = "Fort_Nest" createVehicle _pos;
 		_vehiculos pushBack _bunker;
 		_bunker setDir _dirveh;
 		_pos = getPosATL _bunker;
@@ -240,12 +240,22 @@ if (!_busy) then
 		{
 		_pos1 = getPos (_buildings select 0);
 		_pos2 = getPos (_buildings select 1);
-		_ang = [_pos1, _pos2] call BIS_fnc_DirTo;
+		_ang = "";
+		_angSet = if (_marcador == "airport") then {_ang = 149.373} else {_ang = [_pos1, _pos2] call BIS_fnc_DirTo;};
+		//ang = [_pos1, _pos2] call BIS_fnc_DirTo;
 
-		_pos = [_pos1, 5,_ang] call BIS_fnc_relPos;
+		_pos = "";
+		_posSet = if (_marcador == "airport") then {_pos = [[4792.51,10198.8], 5,_ang] call BIS_fnc_relPos;} else {_pos = [_pos1, 5,_ang] call BIS_fnc_relPos;};
+		//_pos = [_pos1, 5,_ang] call BIS_fnc_relPos;
+		_casPos = [[4957.11,10002.3,0.0838928], 5,_ang] call BIS_fnc_relPos;
 		_grupo = createGroup _lado;
 		_grupos pushBack _grupo;
 		_cuenta = 0;
+
+		_casPlane = "";
+		_casPlaneSet = if (_lado==malos and _marcador = "airport") then {_casPlane = vehNATOPlane;} else {casPlane = "";};
+		_casVeh = createVehicle [_casPlane, [4957.11,10002.3,0.0838928], [],0, "NONE"];
+		_casVeh setDir (_ang + 90);
 		while {(spawner getVariable _marcador != 2) and (_cuenta < 5)} do
 			{
 			_tipoVeh = if (_lado == malos) then {selectRandom (vehNATOAir select {[_x] call A3A_fnc_vehAvailable})} else {selectRandom (vehCSATAir select {[_x] call A3A_fnc_vehAvailable})};

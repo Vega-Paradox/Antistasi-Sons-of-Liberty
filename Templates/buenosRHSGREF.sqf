@@ -5,30 +5,32 @@ SDKMGStatic = "rhsgref_ins_g_DSHKM";
 staticATBuenos = "rhsgref_ins_g_SPG9M";
 staticAABuenos = "rhsgref_ins_g_ZU23";
 
-staticCrewBuenos = "rhsgref_ins_g_militiaman_mosin";
+staticCrewBuenos = "rhsgref_nat_rifleman_vz58";
 SDKUnarmed = "I_G_Survivor_F";
-SDKSniper = ["rhsgref_nat_hunter","rhsgref_nat_pmil_hunter"];
+SDKSniper = ["rhsgref_nat_hunter","rhsgref_ins_g_sniper"];
 SDKATman = ["rhsgref_nat_grenadier_rpg","rhsgref_nat_pmil_grenadier_rpg"];
-SDKMedic = ["rhsgref_ins_g_medic","rhsgref_cdf_ngd_medic"];
-SDKMG = ["rhsgref_ins_g_machinegunner","rhsgref_cdf_ngd_machinegunner"];
-SDKExp = ["rhsgref_nat_pmil_saboteur","rhsgref_ins_g_saboteur"];
-SDKGL = ["rhsgref_nat_pmil_grenadier","rhsgref_ins_g_grenadier"];
-SDKMil = ["rhsgref_nat_militiaman_kar98k","rhsgref_nat_rifleman_akms"];
-SDKSL = ["rhsgref_nat_pmil_commander","rhsgref_nat_commander"];
-SDKEng = ["rhsgref_ins_g_engineer","rhsgref_cdf_ngd_engineer"];
+SDKMedic = ["rhsgref_nat_medic","rhsgref_ins_g_medic"];
+SDKMG = ["rhsgref_nat_machinegunner_mg42","rhsgref_nat_machinegunner"];
+SDKExp = ["rhsgref_nat_saboteur","rhsgref_nat_pmil_saboteur"];
+SDKGL = ["rhsgref_nat_grenadier","rhsgref_nat_pmil_grenadier"];
+SDKMil = ["rhsgref_nat_rifleman","rhsgref_nat_rifleman_akms"];
+SDKSL = ["rhsgref_nat_commander","rhsgref_nat_scout"];
+SDKEng = ["rhsgref_nat_saboteur","rhsgref_ins_g_engineer"];
+
+arrayMilitia = ["UK3CB_CCM_I_TL","UK3CB_CCM_I_RIF_BOLT","UK3CB_CCM_I_RIF_1","UK3CB_CCM_I_AR","UK3CB_CCM_I_MD"];
 
 vehSDKBike = "I_G_Quadbike_01_F";
 vehSDKLightArmed = "rhsgref_ins_g_uaz_dshkm_chdkz";
 vehSDKAT = "rhsgref_nat_uaz_spg9";
-vehSDKLightUnarmed = "rhsgref_cdf_reg_uaz_open";
+vehSDKLightUnarmed = "rhsgref_nat_uaz_open";
 vehSDKTruck = "rhsgref_nat_ural_open";
 //vehSDKHeli = "rhsgref_ins_g_Mi8amt";
 vehSDKPlane = "RHS_AN2";
 vehSDKBoat = "I_C_Boat_Transport_01_F";
 vehSDKRepair = "rhsgref_ins_g_gaz66_repair";
 SDKFlag = "Flag_Syndikat_F";
-SDKFlagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
-tipoPetros = "rhsgref_ins_g_commander";
+SDKFlagTexture = "Textures\Flags\flag_dpvc.jpg";
+tipoPetros = "rhsgref_nat_scout";
 
 soporteStaticSDKB = "RHS_SPG9_Tripod_Bag";
 ATStaticSDKB = "RHS_SPG9_Gun_Bag";
@@ -38,12 +40,44 @@ AAStaticSDKB = "I_AA_01_weapon_F";
 MortStaticSDKB = "RHS_Podnos_Gun_Bag";
 soporteStaticSDKB3 = "RHS_Podnos_Bipod_Bag";
 
-civCar = "C_Offroad_01_F"; 
-civTruck = "RHS_Ural_Open_Civ_03";
-civHeli = "RHS_Mi8amt_civilian";
+civCar = "UK3CB_C_Datsun_Open";
+civTruck = "UK3CB_C_S1203";
+civHeli = "C_Heli_Light_01_civil_F";
 civBoat = "C_Boat_Transport_02_F";
 
-arrayCivVeh = arrayCivVeh + ["RHS_Ural_Open_Civ_03","RHS_Ural_Open_Civ_01","RHS_Ural_Open_Civ_02"];
+//Civilian dealer options
+	//Air
+civairMed = "rhs_uh1h_idap";
+civairHeavy = "UK3CB_C_Mi8AMT";
+civairHeavy2 = "C_IDAP_Heli_Transport_02_F";
+civairScout = "C_Plane_Civil_01_F";
+	//Ground
+civgndBike = "C_Quadbike_01_F";
+civgndSedan = "UK3CB_C_Sedan";
+civgndJeepL = "UK3CB_CHC_C_UAZ_Open";
+civgndJeepH = "UK3CB_CHC_C_LR_Closed";
+civgndLightTruck = "C_Van_01_transport_F";
+civgndCoverTruck = "UK3CB_CHC_C_V3S_Closed";
+civgndRecovTruck = "UK3CB_CHC_C_Ural_Recovery";
+civgndRepairTruck = "UK3CB_CHC_C_V3S_Repair";
+civgndFuelTruck = "UK3CB_CHC_C_Kamaz_Fuel";
+
+//Military dealer options
+	//Antique -- should spawn with no ammo
+milantBTR40 = "UK3CB_B_G_BTR40";
+milantBTR40a = "UK3CB_B_G_BTR40_MG";
+milantMTLB = "UK3CB_B_G_MTLB_PKT";
+milantBTR60 = "rhs_btr60_vv";
+milantT34 = "UK3CB_B_G_T34";
+	//Black Market
+milblkGunVic = "rhs_tigr_sts_3camo_vdv";
+milblkAPC = "rhsusf_m113_usarmy";
+milblkMRAP = "rhsgref_BRDM2_vdv";
+milblkScoutIFV = "rhs_bmd1";
+milblkAH6 = "RHS_MELB_AH6M";
+
+arrayCivVeh = arrayCivVeh + ["RHS_Ural_Open_Civ_03","RHS_Ural_Open_Civ_01","RHS_Ural_Open_Civ_02", civgndBike, civgndJeepL, civgndJeepH];
+arrayCivAir = [civHeli, civairMed, civairHeavy, civairScout];
 
 sniperRifle = "rhs_weap_m76_pso";
 lamparasSDK = ["rhs_acc_2dpZenit","acc_flashlight"];
@@ -59,17 +93,17 @@ else
 	{
 	if (gameMode != 4) then
 		{
-		FIARifleman = "rhsgref_hidf_rifleman";
-		FIAMarksman = "rhsgref_hidf_marksman";
-		vehFIAArmedCar = "rhs_tigr_sts_3camo_msv";
-		vehFIATruck = "rhsgref_cdf_b_ural_open";
-		vehFIACar = "rhsgref_cdf_b_reg_uaz";
+		FIARifleman = "rhsgref_cdf_b_para_rifleman";
+		FIAMarksman = "rhsgref_cdf_b_para_marksman";
+		vehFIAArmedCar = "rhsgref_BRDM2_b";
+		vehFIATruck = "UK3CB_B_BTR40_CDF";
+		vehFIACar = "UK3CB_B_LandRover_Closed_CDF";
 
-		gruposFIASmall = [["rhsgref_hidf_grenadier","rhsgref_hidf_rifleman"],["rhsgref_hidf_marksman","rhsgref_hidf_rifleman"]];//["IRG_InfSentry","IRG_ReconSentry","IRG_SniperTeam_M"];///
-		gruposFIAMid = [["rhsgref_hidf_teamleader","rhsgref_hidf_machinegunner","rhsgref_hidf_machinegunner_assist","rhsgref_hidf_grenadier"],["rhsgref_hidf_teamleader","rhsgref_hidf_rifleman_m72","rhsgref_hidf_rifleman_m72","rhsgref_hidf_grenadier"]];//["IRG_InfAssault","IRG_InfTeam","IRG_InfTeam_AT"];///
-		FIASquad = ["rhsgref_hidf_squadleader","rhsgref_hidf_machinegunner","rhsgref_hidf_machinegunner_assist","rhsgref_hidf_rifleman","rhsgref_hidf_rifleman_m72","rhsgref_hidf_rifleman_m72","rhsgref_hidf_grenadier","rhsgref_hidf_medic"];//"IRG_InfSquad";///
+		gruposFIASmall = [["rhsgref_cdf_b_para_grenadier","rhsgref_cdf_b_para_rifleman"],["rhsgref_cdf_b_para_marksman","rhsgref_cdf_b_para_rifleman"]];//["IRG_InfSentry","IRG_ReconSentry","IRG_SniperTeam_M"];///
+		gruposFIAMid = [["rhsgref_cdf_b_para_squadleader","rhsgref_cdf_b_para_machinegunner","rhsgref_cdf_b_para_rifleman_lite","rhsgref_cdf_b_para_grenadier"],["rhsgref_cdf_b_para_squadleader","rhsgref_cdf_b_para_grenadier_rpg","rhsgref_cdf_b_para_grenadier_rpg","rhsgref_cdf_b_para_grenadier"]];//["IRG_InfAssault","IRG_InfTeam","IRG_InfTeam_AT"];///
+		FIASquad = ["rhsgref_cdf_b_para_squadleader","rhsgref_cdf_b_para_machinegunner","rhsgref_cdf_b_para_rifleman_lite","rhsgref_cdf_b_para_rifleman","rhsgref_cdf_b_para_grenadier_rpg","rhsgref_cdf_b_para_grenadier_rpg","rhsgref_cdf_b_para_grenadier","rhsgref_cdf_b_para_medic"];//"IRG_InfSquad";///
 		gruposFIASquad = [FIASquad];
-		factionFIA = "rhsgref_faction_hidf";
+		factionFIA = "rhsgref_faction_cdf_ground_b";
 		}
 	else
 		{
@@ -87,9 +121,9 @@ else
 		};
 	};
 
-vehPoliceCar = "rhsgref_cdf_b_reg_uaz_open";
-policeOfficer = "rhsgref_cdf_b_ngd_squadleader";
-policeGrunt = "rhsgref_cdf_b_ngd_rifleman_lite";
+vehPoliceCar = "UK3CB_CPD_B_TIGR_FFV";
+policeOfficer = "UK3CB_CPD_B_OREL_SL";
+policeGrunt = "UK3CB_CPD_B_OREL_RIF_2";
 gruposNATOGen = [policeOfficer,policeGrunt];
 nameBuenos = "DPVC";
 

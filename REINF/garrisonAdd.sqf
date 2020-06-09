@@ -21,7 +21,7 @@ else
 	_coste = server getVariable _tipo;
 	};
 
-if (_coste > _resourcesFIA) exitWith {hint format ["You do not have enough money for this kind of unit (%1 € needed)",_coste]};
+if (_coste > _resourcesFIA) exitWith {hint format ["You do not have enough money for this kind of unit (%1 ой needed)",_coste]};
 
 _marcador = posicionGarr;
 

@@ -244,3 +244,11 @@ else
 	if (hayRHS) then {[player] call A3A_fnc_RHSdress};
 	if (hayACE) then {[] call A3A_fnc_ACEpvpReDress};
 	};
+
+//Stamina parameter toggle check
+_staminaDisable = "staminaDisable" call BIS_fnc_getParamValue;
+if (_staminaDisable == 1) then {
+	player enableStamina false;
+	} else{
+	player enableStamina true;
+	};

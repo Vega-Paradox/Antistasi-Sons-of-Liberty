@@ -1,5 +1,7 @@
-cutText ["You decided to rest for some time","BLACK",5];
+cutText ["Tomorrow is a new day, soldier...","BLACK",5];
+5 fadeSound 0;
 sleep 10;
 skiptime 8;
 forceWeatherChange;
-cutText ["Time to go","BLACK IN",10];
+5 fadeSound 1;
+cutText ["It's time for revolution...","BLACK IN",5];
