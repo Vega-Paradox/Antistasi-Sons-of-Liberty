@@ -28,6 +28,7 @@ vehCSATPlaneAA = "RHS_T50_vvs_051";
 vehCSATPatrolHeli = "rhs_ka60_c";
 vehCSATTransportHelis = ["RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_Cargo_vv",vehCSATPatrolHeli];
 vehCSATAttackHelis = ["RHS_Mi24V_vdv","RHS_Mi8MTV3_FAB_vdv"];
+vehCSATPlanes = [vehCSATPlane,vehCSATPlaneAA];
 vehCSATAir = vehCSATTransportHelis + vehCSATAttackHelis + [vehCSATPlane,vehCSATPlaneAA];
 vehCSATUAV = "rhs_pchela1t_vvs";
 vehCSATUAVSmall = "O_UAV_01_F";

@@ -28,7 +28,7 @@ if (round random 100 < _chance) then
 		}
 	else
 		{
-		if (faction _unit != factionFIA) then {_unit globalChat "Allah bless you!"} else {_unit globalChat "Thank you. I swear you won't regret it!"};
+		if (faction _unit != factionFIA) then {_unit globalChat "God bless bless you!"} else {_unit globalChat "Thank you. I swear you won't regret it!"};
 		};
 	_unit enableAI "ANIM";
 	_unit enableAI "MOVE";

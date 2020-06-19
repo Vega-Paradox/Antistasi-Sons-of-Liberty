@@ -233,6 +233,17 @@ _grupos pushBack (_ret select 0);
 _vehiculos append (_ret select 1);
 _soldados append (_ret select 2);
 
+//Airport South spawns
+_dropPlane = "";
+if (_lado == malos and _marcador == "airport_1") then {_dropPlane = vehNATOTransportPlane;} else {_dropPlane = "";};
+if (_marcador == "airport_1") then {_dropVeh = createVehicle [_dropPlane, [4756.97,2596.17,0.803685], [],0, "NONE"]; _dropVeh setDir (211.798);};
+
+//Airport Northeast spawns
+_aaPlane = "";
+if (_marcador == "airport_2") then {_aaPlane = selectRandom vehCSATPlanes;} else {_aaPlane = "";};
+if (_marcador == "airport_2") then {_aaVeh = createVehicle [_aaPlane, [4756.97,2596.17,0.803685], [],0, "NONE"]; _aaVeh setDir (211.798);};
+if (_marcador == "airport_2") then {_grupo createUnit ["rhs_bmp2k_vv", [12101.3,12655.5,0], [],0, "NONE"];};
+
 if (!_busy) then
 	{
 	_buildings = nearestObjects [_posicion, ["Land_LandMark_F","Land_runway_edgelight"], _size / 2];
@@ -253,9 +264,15 @@ if (!_busy) then
 		_cuenta = 0;
 
 		_casPlane = "";
+<<<<<<< Updated upstream
 		_casPlaneSet = if (_lado==malos and _marcador = "airport") then {_casPlane = vehNATOPlane;} else {casPlane = "";};
 		_casVeh = createVehicle [_casPlane, [4957.11,10002.3,0.0838928], [],0, "NONE"];
 		_casVeh setDir (_ang + 90);
+=======
+		if (_lado == malos and _marcador == "airport") then {_casPlane = vehNATOPlane;} else {_casPlane = "";};
+		if (_marcador == "airport") then {_casVeh = createVehicle [_casPlane, [4957.11,10002.3,0.0838928], [],0, "NONE"]; _casVeh setDir (_ang + 90);};
+
+>>>>>>> Stashed changes
 		while {(spawner getVariable _marcador != 2) and (_cuenta < 5)} do
 			{
 			_tipoVeh = if (_lado == malos) then {selectRandom (vehNATOAir select {[_x] call A3A_fnc_vehAvailable})} else {selectRandom (vehCSATAir select {[_x] call A3A_fnc_vehAvailable})};
@@ -331,6 +348,12 @@ _array = [];
 _subArray = [];
 _cuenta = 0;
 _tam = _tam -1;
+<<<<<<< Updated upstream
+=======
+
+if (_lado == malos and _marcador == "airport") then {_posicion = [4684.33,10193.4,0]} else {_posicion = getMarkerPos (_marcador);};
+
+>>>>>>> Stashed changes
 while {_cuenta <= _tam} do
 	{
 	_array pushBack (_garrison select [_cuenta,7]);

@@ -30,6 +30,7 @@ vehNATOBoats = [vehNATOBoat,vehNATORBoat,"rhsgref_cdf_b_btr70"];
 vehNATOPlane = "rhs_l159_cdf_b_CDF";
 vehNATOPlaneAA = "rhsgref_cdf_b_mig29s";
 vehNATOPatrolHeli = "rhsgref_cdf_b_reg_Mi8amt";
+vehNATOTransportPlane = "RHS_AN2_B";
 vehNATOTransportHelis = [vehNATOPatrolHeli,"rhsgref_cdf_b_reg_Mi17Sh","rhsgref_cdf_b_Mi24D","RHS_AN2_B"];
 vehNATOAttackHelis = ["rhsgref_cdf_b_Mi24D","rhsgref_cdf_b_Mi35","rhsgref_cdf_b_reg_Mi17Sh"];
 vehNATOAir = vehNATOTransportHelis + vehNATOAttackHelis + [vehNATOPlane,vehNATOPlaneAA];
