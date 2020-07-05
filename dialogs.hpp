@@ -3429,7 +3429,7 @@ class gameMode_menu 			{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = 104;
-			text = "Reb vs Gov vs Inv"; //--- ToDo: Localize;
+			text = "[SELECT ME] Reb vs Gov vs Inv"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
