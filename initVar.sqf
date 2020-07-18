@@ -510,25 +510,36 @@ timer setVariable [vehNATOMRLS,0,true];
 timer setVariable [vehCSATMRLS,5,true];
 
 //Dealer: Civ Air
-server setVariable [civairMed,2750,true];//3500
-server setVariable [civairHeavy,3550,true];//4550
-server setVariable [civairHeavy2,3500,true];//4500
-server setVariable [civairScout,3750,true];//5000
+server setVariable [civairMed,1655,true];//1655
+server setVariable [civairHeavy,2055,true];//2055
+server setVariable [civairHeavy2,2055,true];//2055
+server setVariable [civairScout,1250,true];//1250
 //Dealer: Civ Ground
 server setVariable [civgndBike,50,true];//50
 server setVariable [civgndSedan,150,true];//150
-server setVariable [civgndJeepL,200,true];//250
-server setVariable [civgndJeepH,275,true];//300
-server setVariable [civgndLightTruck,325,true];//450
-server setVariable [civgndCoverTruck,375,true];//550
-server setVariable [civgndRecovTruck,400,true];//575
-server setVariable [civgndRepairTruck,465,true];//600
-server setVariable [civgndFuelTruck,465,true];//675
-
+server setVariable [civgndJeepL,200,true];//200
+server setVariable [civgndJeepH,275,true];//275
+server setVariable [civgndLightTruck,315,true];//315
+server setVariable [civgndCoverTruck,345,true];//345
+server setVariable [civgndRecovTruck,377,true];//377
+server setVariable [civgndRepairTruck,380,true];//380
+server setVariable [civgndFuelTruck,380,true];//380
+//Dealer: Mil Antique
+server setVariable [milantBTR40,450,true];//450
+server setVariable [milantBTR40a,485,true];//485
+server setVariable [milantMTLB,550,true];//550
+server setVariable [milantBTR60,643,true];//643
+server setVariable [milantT34,742,true];//742
+//Dealer: Mil Black Market
+server setVariable [milblkGunVic,566,true];//566
+server setVariable [milblkAPC,590,true];//590
+server setVariable [milblkMRAP,645,true];//645
+server setVariable [milblkScoutIFV,1053,true];//1053
+server setVariable [milblkAH6,2100,true];//2100
 //Base buy
 server setVariable [civCar,200,true];//200
-server setVariable [civTruck,265,true];//600
-server setVariable [civHeli,2500,true];//2500
+server setVariable [civTruck,265,true];//265
+server setVariable [civHeli,1000,true];//1000
 server setVariable [civBoat,200,true];//200
 server setVariable [vehSDKBike,50,true];//50
 server setVariable [vehSDKLightUnarmed,200,true];//200

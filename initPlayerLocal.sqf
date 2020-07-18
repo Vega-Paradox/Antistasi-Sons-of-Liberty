@@ -661,10 +661,15 @@ dealCivGnd_f1 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_f
 dealCivGnd_f2 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 dealCivGnd_f3 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 	//Mil
-
+dealMilAnt_f1 addAction ["Buy Antique Military Vehicles", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_ant.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealMilBlk_f1 addAction ["Buy Black Market Vehicles", {if ([player,75] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_blk.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 
 dealTestA addAction ["[TEST] Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 dealTestB addAction ["[TEST] Buy Civilian Aircraft", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optionair"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealTestC addAction ["Buy Antique Military Vehicles", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_ant.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+dealTestD addAction ["Buy Black Market Vehicles", {if ([player,75] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_blk.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+
+bandera addAction ["War Level test", {hint str(tierWar)}];
 
 disableSerialization;
 //1 cutRsc ["H8erHUD","PLAIN",0,false];

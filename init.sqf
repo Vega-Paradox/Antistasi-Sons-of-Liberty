@@ -15,6 +15,8 @@ dealMilAnt_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
 dealMilBlk_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
 dealTestA setFlagTexture "Textures\Flags\flag_yellow.paa";
 dealTestB setFlagTexture "Textures\Flags\flag_purple.paa";
+dealTestC setFlagTexture "Textures\Flags\flag_yellow.paa";
+dealTestD setFlagTexture "Textures\Flags\flag_yellow.paa";
 
 if (isServer and (isNil "serverInitDone")) then {skipTime random 24};
 

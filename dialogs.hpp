@@ -1196,9 +1196,183 @@ class dealer_civ_trucks 			{
 		 };
 	};
 };
-	//Dealers: Military
-		//Optionblank
+	//Dealers: Military Antiques
+		//Antique options
+class dealer_mil_ant			{
+	idd=110;
+	movingenable=false;
 
+	class controls {
+		class DMa_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.412025 * safezoneH;
+		};
+		class DMa_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Antique Military Vehicles"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.392025 * safezoneH;
+		};
+		class DMa_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0";
+		};
+		class DMa_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "BTR40"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milantBTR40] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMa_button_opt2: RscButton
+		{
+			idc = 105;
+			text = "BTR40 Armed"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milantBTR40a] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMa_button_opt3: RscButton
+		{
+			idc = 106;
+			text = "MT-LB"; //--- ToDo: Localize;
+			//x = 0.37749 * safezoneW + safezoneX;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milantMTLB] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMa_button_opt4: RscButton
+		{
+			idc = 107;
+		 	text = "BTR60"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+		 	y = 0.415981 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [milantBTR60] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+		class DMa_button_opt5: RscButton
+		{
+			idc = 108;
+		 	text = "T-34-85M"; //--- ToDo: Localize;
+			x = 0.3774895 * safezoneW + safezoneX;
+		 	y = 0.514003 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [milantT34] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+	};
+};
+	//Dealers: Military Black Market
+		//Black market options
+class dealer_mil_blk			{
+	idd=120;
+	movingenable=false;
+
+	class controls {
+		class DMb_box: BOX
+		{
+			idc = -1;
+			text = ""; //--- ToDo: Localize;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.412025 * safezoneH;
+		};
+		class DMb_frame: RscFrame
+		{
+			idc = -1;
+			text = "Buy Black Market Vehicles"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.392025 * safezoneH;
+		};
+		class DMb_button_back: RscButton
+		{
+			idc = -1;
+			text = "Back"; //--- ToDo: Localize;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0; nul = createDialog ""dealer_civ_optiongnd"";";
+		};
+		class DMb_button_opt1: RscButton
+		{
+			idc = 104;
+			text = "Light Armed Car"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milblkGunVic] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMb_button_opt2: RscButton
+		{
+			idc = 105;
+			text = "Armed APC"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milblkAPC] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMb_button_opt3: RscButton
+		{
+			idc = 106;
+			text = "Armed MRAP"; //--- ToDo: Localize;
+			//x = 0.37749 * safezoneW + safezoneX;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul = [milblkMRAP] spawn A3A_fnc_addFIAVENDveh;";
+		};
+		class DMb_button_opt4: RscButton
+		{
+			idc = 107;
+		 	text = "Scout IFV"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+		 	y = 0.415981 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [milblkScoutIFV] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+		class DMb_button_opt5: RscButton
+		{
+			idc = 108;
+		 	text = "AH-6"; //--- ToDo: Localize;
+			x = 0.3774895 * safezoneW + safezoneX;
+		 	y = 0.514003 * safezoneH + safezoneY;
+		 	w = 0.175015 * safezoneW;
+		 	h = 0.0560125 * safezoneH;
+		 	action = "closeDialog 0;nul = [milblkAH6] spawn A3A_fnc_addFIAVENDveh;";
+		 };
+	};
+};
+//End of vehicle dealers
 
 //Map
 class game_options 		{
