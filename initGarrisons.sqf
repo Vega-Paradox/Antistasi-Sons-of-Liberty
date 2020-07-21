@@ -242,7 +242,7 @@ _dmrk setMarkerShape "ICON";
 _garrNum = random [2, 3, 5];
 _garrison = selectRandom arrayMilitia;
 _dmrk setMarkerType "n_Ordnance";
-_dmrk setMarkerText "Black Market Retailer";
+_dmrk setMarkerText "Chernarus Black Market";
 _dmrk setMarkerColor "ColorUNKNOWN";
 } forEach dealMilBlk;
 {
@@ -253,7 +253,7 @@ _garrNum = [_x] call A3A_fnc_garrisonSize;
 _garrNum = _garrNum / 8;
 _garrison = [];
 _dmrk setMarkerType "n_art";
-_dmrk setMarkerText "Military Antiques Retailer";
+_dmrk setMarkerText "Antique & Surplus Military Vehicles";
 _dmrk setMarkerColor "ColorUNKNOWN";
 } forEach dealMilAnt;
 {

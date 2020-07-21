@@ -73,7 +73,7 @@ else
             dealCivGnd = ["dealCivGnd_1","dealCivGnd_2","dealCivGnd_3"];
             dealMilBlk = ["dealMilBlk_1"];
             dealMilAnt = ["dealMilAnt_1"];
-            dealMilWep = ["dealMilWep_1"];
+            dealMilWep = [];
 			{
             _name = text _x;
             if ((_name != "Magos") AND !(_name == "")) then
@@ -302,7 +302,7 @@ pospepe = [];
 {pospepe = pospepe + getPos _x} forEach pepe;
 copytoclipboard str pospepe;
 */
-if (isMultiplayer) then {[[petros,"hint","Zones Init Completed"],"A3A_fnc_commsMP"] call BIS_fnc_MP};
+if (isMultiplayer) then {[[petros,"hint","Zones initialized, standby...."],"A3A_fnc_commsMP"] call BIS_fnc_MP};
 publicVariable "marcadores";
 publicVariable "ciudades";
 publicVariable "aeropuertos";

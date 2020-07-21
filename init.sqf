@@ -1,5 +1,7 @@
 //Arma 3 - Antistasi - Warlords of the Pacific by Barbolani
+//Sons of Liberty Adaptation by Warcrimes-R-Us
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
+// ^^^^^^^^^^^^^^^ THANK YOU BARBOLANI
 enableSaving [false,false];
 //Object textures
 mapa setObjectTextureGlobal [0,"Textures\Objects\mapB.paa"];
@@ -13,10 +15,6 @@ dealCivGnd_f2 setFlagTexture "Textures\Flags\flag_purple.paa";
 dealCivGnd_f3 setFlagTexture "Textures\Flags\flag_purple.paa";
 dealMilAnt_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
 dealMilBlk_f1 setFlagTexture "Textures\Flags\flag_yellow.paa";
-dealTestA setFlagTexture "Textures\Flags\flag_yellow.paa";
-dealTestB setFlagTexture "Textures\Flags\flag_purple.paa";
-dealTestC setFlagTexture "Textures\Flags\flag_yellow.paa";
-dealTestD setFlagTexture "Textures\Flags\flag_yellow.paa";
 
 if (isServer and (isNil "serverInitDone")) then {skipTime random 24};
 

@@ -78,6 +78,7 @@ _posicion = if (side player == side (group petros)) then {position petros} else 
 {
 _x set [3, 0.33]
 } forEach [_colorbuenos, _colormuyMalos];
+hint "";
 _introShot =
 	[
     _posicion, // Target position
@@ -634,12 +635,12 @@ cajaveh addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_
 
 fuego allowDamage false;
 fuego addAction ["Rest for 8 Hours", "skiptime.sqf",nil,0,false,true,"","(_this == theBoss)"];
-fuego addAction ["Clear Nearby Forest", "clearForest.sqf",nil,0,false,true,"","_this == theBoss"];
-fuego addAction ["Toggle Lamp", "onOffLamp.sqf",nil,0,false,true,"","(isPlayer _this) and (side (group _this) == buenos)"];
+fuego addAction ["Clear nearby forest", "clearForest.sqf",nil,0,false,true,"","_this == theBoss"];
+fuego addAction ["Toggle lamp", "onOffLamp.sqf",nil,0,false,true,"","(isPlayer _this) and (side (group _this) == buenos)"];
 fuego addAction ["I hate weather", "[30,0] remoteExec [""setFog"",2]; [30,0] remoteExec [""setRain"",0]; [30,0] remoteExec [""setOvercast"",0]",nil,0,false,true,"","(_this == theBoss)",4];
 fuego addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
 mapa allowDamage false;
-mapa addAction ["Game Options", {hint format ["Antistasi - %2\n\nVersion: %1\n\nDifficulty: %3\nUnlock Weapon Number: %4\nLimited Fast Travel: %5",antistasiVersion,worldName,if (skillMult == 1) then {"Normal"} else {if (skillMult == 0.5) then {"Easy"} else {"Hard"}},minWeaps,if (limitedFT) then {"Yes"} else {"No"}]; nul=CreateDialog "game_options";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
+mapa addAction ["Game Options", {hint format ["Sons of Liberty Chernarus\n\nVersion: %1\n\nDifficulty: %3\nUnlock Weapon Number: %4\nLimited Fast Travel: %5",antistasiVersion,worldName,if (skillMult == 1) then {"Normal"} else {if (skillMult == 0.5) then {"Easy"} else {"Hard"}},minWeaps,if (limitedFT) then {"Yes"} else {"No"}]; nul=CreateDialog "game_options";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 mapa addAction ["Map Info", {nul = [] execVM "cityinfo.sqf";},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 mapa addAction ["Move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
 if (isMultiplayer) then {mapa addAction ["AI Load Info", "[] remoteExec [""A3A_fnc_AILoadInfo"",2]",nil,0,false,true,"","(_this == theBoss)"]};
@@ -650,7 +651,7 @@ petros setIdentity "amiguete";
 petros setName "Orenthal James Simpson";
 petros disableAI "MOVE";
 petros disableAI "AUTOTARGET";
-petros addAction ["Mission Request", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","_this == theBoss"];
+petros addAction ["Request Mission", {nul=CreateDialog "mission_menu";},nil,0,false,true,"","_this == theBoss"];
 petros addAction ["Politely move this asset", "moveHQObject.sqf",nil,0,false,true,"","(_this == theBoss)"];
 
 //Add dealer actions
@@ -663,13 +664,6 @@ dealCivGnd_f3 addAction ["Buy Civilian Automobile", {if ([player,150] call A3A_f
 	//Mil
 dealMilAnt_f1 addAction ["Buy Antique Military Vehicles", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_ant.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
 dealMilBlk_f1 addAction ["Buy Black Market Vehicles", {if ([player,75] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_blk.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-
-dealTestA addAction ["[TEST] Buy Civilian Automobile", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optiongnd"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-dealTestB addAction ["[TEST] Buy Civilian Aircraft", {if ([player,300] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {nul = createDialog "dealer_civ_optionair"}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-dealTestC addAction ["Buy Antique Military Vehicles", {if ([player,150] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_ant.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-dealTestD addAction ["Buy Black Market Vehicles", {if ([player,75] call A3A_fnc_enemyNearCheck) then {hint "You cannot buy vehicles while there are enemies near you"} else {execVM "Dialogs\dealer_mil_blk.sqf";}},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == buenos)"];
-
-bandera addAction ["War Level test", {hint str(tierWar)}];
 
 disableSerialization;
 //1 cutRsc ["H8erHUD","PLAIN",0,false];

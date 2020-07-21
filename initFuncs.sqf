@@ -22,4 +22,4 @@ call compile preprocessFileLineNumbers "statSave\saveFuncs.sqf";
 call jn_fnc_logistics_init;
 caja call jn_fnc_arsenal_init;
 
-diag_log "Functions Init Completed";
+diag_log "Functions initialized, standby...";

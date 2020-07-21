@@ -139,7 +139,7 @@ private _index = _x call jn_fnc_arsenal_itemType;
 
 
 diag_log "Antistasi MP Server. Arsenal config finished";
-[[petros,"hint","Server Init Completed"],"A3A_fnc_commsMP"] call BIS_fnc_MP;
+[[petros,"hint","Server initialized"],"A3A_fnc_commsMP"] call BIS_fnc_MP;
 
 addMissionEventHandler ["HandleDisconnect",{_this call A3A_fnc_onPlayerDisconnect;false}];
 addMissionEventHandler ["BuildingChanged",

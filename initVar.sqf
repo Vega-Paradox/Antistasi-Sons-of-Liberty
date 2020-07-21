@@ -600,6 +600,7 @@ if (!activeGREF) then
 			unlockedWeapons append ["arifle_AKM_F","arifle_AKS_F"];
 			unlockedRifles append ["arifle_AKM_F","arifle_AKS_F"];
 			initialRifles append ["arifle_AKM_F","arifle_AKS_F"];
+			unlocketAT = ["rhs_weap_panzerfaust60","rhs_weap_rshg2"];
 			if (worldName == "Tanoa") then
 				{
 				unlockedWeapons pushBack "launch_RPG7_F";
@@ -629,12 +630,12 @@ if (!activeGREF) then
     }
 else
     {
-    unlockedWeapons = ["Binocular","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_pm63","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33","rhs_weap_type94_new","rhs_weap_savz61_folded"];
-    unlockedRifles = ["rhs_weap_akms","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_savz61","rhs_weap_m3a1","rhs_weap_m1garand_sa43","rhs_weap_l1a1_wood","rhs_weap_akmn_npz"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
-    unlockedMagazines = ["IEDLandSmall_Remote_Mag","DemoCharge_Remote_Mag","rhsgref_1Rnd_Slug","rhsgref_1Rnd_00Buck"];
+    unlockedWeapons = ["Binocular","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33","rhs_weap_type94_new","rhs_weap_savz61_folded","rhs_weap_rsp30_white"];
+    unlockedRifles = ["rhs_weap_m38","rhs_weap_kar98k","rhs_weap_Izh18","rhs_weap_savz61"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
+    unlockedMagazines = ["rhsgref_5Rnd_762x54_m38","rhsgref_5Rnd_792x57_kar98k","rhsgref_1Rnd_Slug","rhsgref_1Rnd_00Buck","rhsgref_20rnd_765x17_vz61","rhsgref_10rnd_765x17_vz61","rhs_mag_762x25_8","rhs_mag_6x8mm_mhp","IEDLandSmall_Remote_Mag","DemoCharge_Remote_Mag","rhs_mag_rgd5","rhs_mag_rdg2_white","rhs_mag_nspn_green","rhs_mag_nspn_red","rhs_mag_nspn_yellow","rhs_charge_tnt_x2_mag","rhsgref_mag_rkg3em"];
     initialRifles = ["rhs_weap_m38","rhs_weap_kar98k","rhs_weap_pm63","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33"];
-    unlockedItems = unlockedItems + ["rhs_acc_2dpZenit"];
-    unlockedAT = ["rhs_weap_panzerfaust60","rhs_weap_rshg2"];
+    unlockedItems = unlockedItems + ["rhs_acc_2dpZenit","rhs_acc_dtk1l","rhs_acc_pbs1"];
+    unlockedAT = ["rhs_weap_panzerfaust60","rhs_weap_rshg2","launch_RPG7_F"];
     };
 
 {
@@ -651,7 +652,7 @@ unlockedGL = [];
 unlockedSN = [];
 unlockedAA = [];
 garageIsUsed = false;
-vehInGarage = ["C_Offroad_01_F"];
+vehInGarage = ["UK3CB_C_Datsun_Open"];
 destroyedBuildings = []; //publicVariable "destroyedBuildings";
 reportedVehs = [];
 hayTFAR = false;
@@ -830,4 +831,4 @@ publicVariable "unlockedAT";
 publicVariable "unlockedAA";
 publicVariable "initialRifles";
 
-if (isMultiplayer) then {[[petros,"hint","Variables Init Completed"],"A3A_fnc_commsMP"] call BIS_fnc_MP;};
+if (isMultiplayer) then {[[petros,"hint","Variables initialized, standby..."],"A3A_fnc_commsMP"] call BIS_fnc_MP;};

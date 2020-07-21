@@ -1,12 +1,12 @@
 if (!isNil "placementDone") then
 	{
 	theBoss allowDamage false;
-	format ["%1 is Dead",name petros] hintC format ["%1 has been killed. You lost part of your assets and need to select a new HQ position far from the enemies.",name petros];
+	format ["%1 is dead!",name petros] hintC format ["%1 was killed! You lost some of your assets and need to select a new HQ position away from the enemies!",name petros];
 	}
 else
 	{
 	diag_log "Antistasi: New Game selected";
-	"Initial HQ Placement Selection" hintC ["Click on the Map Position you want to start the Game.","Close the map with M to start in the default position.","Don't select areas with enemies nearby!!\n\nGame experience changes a lot on different starting positions."];
+	"Select Initial HQ Position" hintC ["Click on the map to select a starting position for the HQ.","Close the map with M to start in the default position.","Don't select areas with enemies nearby!\n\nGameplay experience and speed may change with different starting positions."];
 	};
 
 hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload",

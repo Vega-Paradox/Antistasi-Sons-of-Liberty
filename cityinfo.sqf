@@ -126,7 +126,7 @@ while {visibleMap} do
 			{
 			if (not(lados getVariable [_sitio,sideUnknown] == buenos)) then
 				{
-				_texto = format ["%1 Grand Outpost",_nameFaction];
+				_texto = format ["%1 Outpost",_nameFaction];
 				_busy = [_sitio,true] call A3A_fnc_airportCanAttack;
 				if (_busy) then {_texto = format ["%1\nStatus: Idle",_texto]} else {_texto = format ["%1\nStatus: Busy",_texto]};
 				_garrison = count (garrison getVariable _sitio);
@@ -134,7 +134,7 @@ while {visibleMap} do
 				}
 			else
 				{
-				_texto = format ["%2 Grand Outpost%1",[_sitio] call A3A_fnc_garrisonInfo,_nameFaction];
+				_texto = format ["%2 Outpost%1",[_sitio] call A3A_fnc_garrisonInfo,_nameFaction];
 				};
 			};
 		if (_sitio in puertos) then
