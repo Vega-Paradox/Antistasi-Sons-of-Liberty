@@ -1508,7 +1508,7 @@ class game_options 		{
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Use this option to save your current game. It does save the most important data in a ""Grand Theft Auto"" way. This opnion allows good MP save and independent saves of any version update. Vanilla saves are disabled because of lack of several features";
+			tooltip = "Use this option to save your current game.\nThis saves your data in a way similar to Grand Theft Auto.\nThis option allows for persistent multiplayer saves and independent saves of any version update.\nVanilla saves are disabled in favor of this more in-depth system.";
 			action = "closeDialog 0;if (player == theBoss) then {[""statSave\saveLoop.sqf"",""BIS_fnc_execVM""] call BIS_fnc_MP} else {_nul = [] execVM ""statSave\saveLoop.sqf""; hintC ""Personal Stats Saved""};";
 		};
 	};

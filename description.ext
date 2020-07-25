@@ -4,10 +4,10 @@
 author="Barbolani, Chernarus port by Evoke, SOL by Warcrimes-R-Us";
 OnLoadName = "Sons Of Liberty - Chernarus";
 OnLoadMission = "We will soak the lands in blood to gain our freedom";
-loadScreen = "pic.jpg";
+loadScreen = "loadingscreen.jpg";
 
 overviewText = "We will soak the lands in blood to gain our freedom";
-overviewPicture = "pic.jpg";
+overviewPicture = "loadingscreen.jpg";
 
 allowFunctionsLog = 1;
 enableDebugConsole = 1;

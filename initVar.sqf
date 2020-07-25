@@ -524,7 +524,7 @@ server setVariable [civgndCoverTruck,345,true];//345
 server setVariable [civgndRecovTruck,377,true];//377
 server setVariable [civgndRepairTruck,380,true];//380
 server setVariable [civgndFuelTruck,380,true];//380
-//Dealer: Mil Antique
+//Dealer: Mil Antiques
 server setVariable [milantBTR40,450,true];//450
 server setVariable [milantBTR40a,485,true];//485
 server setVariable [milantMTLB,550,true];//550
@@ -630,12 +630,12 @@ if (!activeGREF) then
     }
 else
     {
-    unlockedWeapons = ["Binocular","rhs_weap_m38","rhs_weap_kar98k","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33","rhs_weap_type94_new","rhs_weap_savz61_folded","rhs_weap_rsp30_white"];
-    unlockedRifles = ["rhs_weap_m38","rhs_weap_kar98k","rhs_weap_Izh18","rhs_weap_savz61"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
-    unlockedMagazines = ["rhsgref_5Rnd_762x54_m38","rhsgref_5Rnd_792x57_kar98k","rhsgref_1Rnd_Slug","rhsgref_1Rnd_00Buck","rhsgref_20rnd_765x17_vz61","rhsgref_10rnd_765x17_vz61","rhs_mag_762x25_8","rhs_mag_6x8mm_mhp","IEDLandSmall_Remote_Mag","DemoCharge_Remote_Mag","rhs_mag_rgd5","rhs_mag_rdg2_white","rhs_mag_nspn_green","rhs_mag_nspn_red","rhs_mag_nspn_yellow","rhs_charge_tnt_x2_mag","rhsgref_mag_rkg3em"];
-    initialRifles = ["rhs_weap_m38","rhs_weap_kar98k","rhs_weap_pm63","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33"];
-    unlockedItems = unlockedItems + ["rhs_acc_2dpZenit","rhs_acc_dtk1l","rhs_acc_pbs1"];
-    unlockedAT = ["rhs_weap_panzerfaust60","rhs_weap_rshg2","launch_RPG7_F"];
+    unlockedWeapons = ["Binocular","rhs_weap_pm63","UK3CB_Enfield","UK3CB_Enfield_Rail","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_6p53","rhs_weap_pb_6p9","rhs_weap_savz61_folded","rhs_weap_rsp30_white","launch_RPG7_F","rhs_weap_panzerfaust60","rhs_weap_rshg2"];
+    unlockedRifles = ["rhs_weap_pm63","UK3CB_Enfield","UK3CB_Enfield_Rail","rhs_weap_Izh18","rhs_weap_savz61"];//standard rifles for AI riflemen, medics engineers etc. are picked from this array. Add only rifles.
+    unlockedMagazines = ["rhs_30Rnd_762x39mm","UK3CB_Enfield_Mag","rhs_30Rnd_762x39mm_Savz58","rhsgref_10Rnd_792x57_m76","rhsgref_50Rnd_792x57_SmE_drum","rhsgref_1Rnd_Slug","rhsgref_1Rnd_00Buck","rhsgref_20rnd_765x17_vz61","rhsgref_10rnd_765x17_vz61","rhs_18rnd_9x21mm_7N28","rhs_mag_9x18_8_57N181S","IEDLandSmall_Remote_Mag","DemoCharge_Remote_Mag","rhs_mag_f1","rhs_mag_rdg2_white","rhs_mag_rdg2_black","rhs_mag_zarya2","rhs_mag_nspn_green","rhs_mag_nspn_red","rhs_mag_nspn_yellow","rhs_charge_tnt_x2_mag","rhs_grenade_sthgr43_mag","rhsgref_mag_rkg3em","rhs_rpg7_PG7V_mag","rhs_rpg7_PG7VL_mag","rhs_rpg7_OG7V_mag"];
+    initialRifles = ["rhs_weap_pm63","UK3CB_Enfield","UK3CB_Enfield_Rail","rhs_weap_Izh18","rhs_weap_savz61","rhs_weap_tt33"];
+    unlockedItems = unlockedItems + ["rhs_acc_2dpZenit","rhs_acc_perst1ik","rhs_acc_dtkakm","rhs_acc_dtk1l","rhs_acc_zendl","rhs_acc_pbs1"];
+	unlockedAT = ["launch_RPG7_F","rhs_weap_panzerfaust60","rhs_weap_rshg2"];
     };
 
 {

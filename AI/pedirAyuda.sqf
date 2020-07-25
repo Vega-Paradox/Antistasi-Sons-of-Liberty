@@ -26,7 +26,7 @@ else
 		{
 		if ([_x] call A3A_fnc_isMedic) then
 			{
-			if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < 81) and !(_x getVariable ["maniobrando",false])) then
+			if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x) or "Medikit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < 81) and !(_x getVariable ["maniobrando",false])) then
 				{
 				//_ayudando = _x getVariable "ayudando";
 				if (!(_x getVariable ["ayudando",false]) and (!(_x getVariable ["rearming",false]))) then
@@ -46,7 +46,7 @@ else
 			{
 			if !([_x] call A3A_fnc_isMedic) then
 				{
-				if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia) and !(_x getVariable ["maniobrando",false])) then
+				if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x) or "Medikit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia) and !(_x getVariable ["maniobrando",false])) then
 					{
 					//_ayudando = _x getVariable "ayudando";
 					if (!(_x getVariable ["ayudando",false]) and (!(_x getVariable ["rearming",false]))) then
@@ -69,7 +69,7 @@ else
 		{
 		if (!isPlayer _x) then
 			{
-			if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia)) then
+			if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x) or "Medikit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia)) then
 				{
 				_medico == _unit;
 				};

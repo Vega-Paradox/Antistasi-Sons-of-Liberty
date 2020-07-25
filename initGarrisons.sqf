@@ -253,20 +253,9 @@ _garrNum = [_x] call A3A_fnc_garrisonSize;
 _garrNum = _garrNum / 8;
 _garrison = [];
 _dmrk setMarkerType "n_art";
-_dmrk setMarkerText "Antique & Surplus Military Vehicles";
+_dmrk setMarkerText "Military Surplus & Antiques";
 _dmrk setMarkerColor "ColorUNKNOWN";
 } forEach dealMilAnt;
-{
-_pos = getMarkerPos _x;
-_dmrk = createMarker [format ["Dum%1",_x], _pos];
-_dmrk setMarkerShape "ICON";
-_garrNum = [_x] call A3A_fnc_garrisonSize;
-_garrNum = _garrNum / 8;
-_garrison = [];
-_dmrk setMarkerType "n_mortar";
-_dmrk setMarkerText "Chernarus Gun Club";
-_dmrk setMarkerColor "ColorUNKNOWN";
-} forEach dealMilWep;
 
 lados setVariable ["NATO_carrier",malos,true];
 lados setVariable ["CSAT_carrier",muyMalos,true];

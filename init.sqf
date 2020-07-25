@@ -4,6 +4,8 @@
 // ^^^^^^^^^^^^^^^ THANK YOU BARBOLANI
 enableSaving [false,false];
 //Object textures
+mapa setObjectTexture [0,"Textures\Objects\mapB.paa"];
+cajaVeh setObjectTexture [1, "Textures\Objects\base_ammo_dpvc.jpg"];
 mapa setObjectTextureGlobal [0,"Textures\Objects\mapB.paa"];
 cajaVeh setObjectTextureGlobal [1, "Textures\Objects\base_ammo_dpvc.jpg"];
 //Flag textures

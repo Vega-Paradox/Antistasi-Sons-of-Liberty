@@ -29,7 +29,7 @@ vehSDKPlane = "RHS_AN2";
 vehSDKBoat = "I_C_Boat_Transport_01_F";
 vehSDKRepair = "rhsgref_ins_g_gaz66_repair";
 SDKFlag = "Flag_Syndikat_F";
-SDKFlagTexture = "Textures\Flags\flag_dpvc.jpg";
+SDKFlagTexture = "Textures\Flags\flag_dpvc.paa";
 tipoPetros = "rhsgref_nat_scout";
 
 soporteStaticSDKB = "RHS_SPG9_Tripod_Bag";
