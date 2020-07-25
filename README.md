@@ -1,7 +1,7 @@
 # Antistasi - Sons of Liberty Chernarus
 ##### Enter Chernarus and fight amongst the Democratic People's Vilayet of Chernarus, an insurgent group hellbent on terminating the tyranical Chernarussian Defense Force and the Chernarussian government.
 
-### Sons of Liberty Release 2 BETA Week 2 Full Changelog
+## Sons of Liberty Release 2 BETA Week 2 Full Changelog
 ##### Immersion Changes
 - Reworked intro sequence
 - Dynamic weather system
