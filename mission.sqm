@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2471;
+		nextID=2500;
 	};
 	class Camera
 	{
 		pos[]={1233.6237,343.48102,8736.5449};
-		dir[]={0.22462028,-0.56337488,0.79508495};
-		up[]={0.15316513,0.82619983,0.54215562};
-		aside[]={0.96233565,5.1571988e-008,-0.27187014};
+		dir[]={0.10672317,-0.83096129,0.54600328};
+		up[]={0.15940537,0.55633008,0.81552792};
+		aside[]={0.98142982,-3.4924597e-008,-0.19183254};
 	};
 };
 binarizationWanted=0;
@@ -976,7 +976,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1242;
+		items=1241;
 		class Item0
 		{
 			dataType="Group";
@@ -66123,7 +66123,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7044.3315,8.238162,2506.7366};
-				angles[]={-0,3.1690395,0};
+				angles[]={0,3.1690395,0};
 			};
 			side="Empty";
 			flags=4;
@@ -66163,7 +66163,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7054.3843,7.9570007,2521.2942};
-				angles[]={-0,4.7594032,0};
+				angles[]={0,4.7594032,0};
 			};
 			side="Empty";
 			flags=4;
@@ -66203,7 +66203,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7045.686,7.2555795,2518.4106};
-				angles[]={-0,4.0732183,0};
+				angles[]={0,4.0732183,0};
 			};
 			side="Empty";
 			flags=4;
@@ -66236,16 +66236,6 @@ class Mission
 				};
 				nAttributes=1;
 			};
-		};
-		class Item1241
-		{
-			dataType="Marker";
-			position[]={2522.469,194,5073.0908};
-			name="dummymrk";
-			text="Automotive Retailer";
-			type="c_car";
-			colorName="ColorCIV";
-			id=7861;
 		};
 	};
 	class Connections
