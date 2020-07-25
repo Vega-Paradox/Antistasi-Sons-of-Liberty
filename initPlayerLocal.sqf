@@ -31,7 +31,7 @@ if (isMultiplayer) then
 	musicON = false;
 	//waitUntil {scriptdone _introshot};
 	disableUserInput true;
-	cutText ["Waiting for Players and Server Init","BLACK",0];
+	cutText ["Waiting for players and server initialization...","BLACK",0];
 	diag_log "Antistasi MP Client. Waiting for serverInitDone";
 	waitUntil {(!isNil "serverInitDone")};
 	cutText ["Starting Mission","BLACK IN",0];

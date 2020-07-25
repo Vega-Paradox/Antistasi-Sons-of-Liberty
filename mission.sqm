@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=7851;
+		nextID=7861;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2413;
+		nextID=2442;
 	};
 	class Camera
 	{
-		pos[]={7071.3638,37.80521,2509.5764};
-		dir[]={-0.72536629,-0.6654368,0.17663838};
-		up[]={-0.6468479,0.74616891,0.15751436};
-		aside[]={0.23661941,5.4523116e-007,0.97169101};
+		pos[]={4308.6167,340.7164,8051.0771};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -139,13 +139,14 @@ addons[]=
 	"CUP_CAStructures_E_Misc_Misc_Market",
 	"CUP_Ind_Workshop01",
 	"rhsusf_c_markvsoc",
-	"rhs_c_kamaz"
+	"rhs_c_kamaz",
+	"UK3CB_Factions_UN_B"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=80;
+		items=81;
 		class Item0
 		{
 			className="rhsgref_c_troops";
@@ -652,6 +653,13 @@ class AddonsMetaData
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
+		class Item80
+		{
+			className="UK3CB_Factions_UN";
+			name="3CB Factions - UN";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
 	};
 };
 randomSeed=11834268;
@@ -968,7 +976,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1233;
+		items=1243;
 		class Item0
 		{
 			dataType="Group";
@@ -22701,7 +22709,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7836.9946,12.381207,2118.8945};
+				position[]={7836.9946,12.365537,2118.8945};
 				angles[]={0,5.5285749,0};
 			};
 			side="Empty";
@@ -22715,7 +22723,6 @@ class Mission
 			};
 			id=5223;
 			type="rhsgref_cdf_b_reg_Mi8amt";
-			atlOffset=0.015670776;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -66063,6 +66070,403 @@ class Mission
 			};
 			id=7378;
 			type="Land_TTowerSmall_2_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1233
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7051.0488,9.986805,2524.8679};
+				angles[]={0,1.3998239,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=7851;
+			type="FlagCarrierUNO_EP1";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1234
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7039.25,9.986805,2513.821};
+				angles[]={0,3.1393237,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=7852;
+			type="FlagCarrierCDF_EP1";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1235
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7044.4834,6.0100002,2508.5669};
+				angles[]={0,6.1083536,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7853;
+			type="CUP_A2_Road_asf3_10_25";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1236
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7045.9141,6.0100002,2516.26};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7854;
+			type="CUP_A2_Road_asf3_60_10";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1237
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7055.0757,6.0100002,2520.6858};
+				angles[]={0,1.0345218,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7855;
+			type="CUP_A2_Road_asf3_60_10";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1238
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7061.9678,6.0070286,2517.771};
+				angles[]={6.2818937,5.220202,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7856;
+			type="CUP_A2_Road_asf3_6konec";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1239
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7045.1787,6.0079188,2503.439};
+				angles[]={6.2818937,6.1372757,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7857;
+			type="CUP_A2_Road_asf3_6konec";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1240
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7044.3315,8.238162,2506.7366};
+				angles[]={0,3.1690395,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7858;
+			type="UK3CB_UN_B_M1117";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1241
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7054.3843,7.9570007,2521.2942};
+				angles[]={0,4.7594032,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7859;
+			type="UK3CB_UN_B_M1025_Unarmed";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1242
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7045.686,7.2555795,2518.4106};
+				angles[]={0,4.0732183,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=7860;
+			type="UK3CB_UN_B_UAZ_Closed";
 			class CustomAttributes
 			{
 				class Attribute0

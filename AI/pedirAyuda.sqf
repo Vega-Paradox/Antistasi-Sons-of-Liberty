@@ -12,7 +12,7 @@ if ((([objNull, "VIEW"] checkVisibility [eyePos _enemy, eyePos _unit]) > 0) or (
 	{
 	if (!isPlayer _x) then
 		{
-		if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia) and !(_x getVariable ["maniobrando",false])) then
+		if (([_x] call A3A_fnc_canFight) and ("FirstAidKit" in (items _x) or "Medikit" in (items _x)) and (vehicle _x == _x) and (_x distance _unit < _distancia) and !(_x getVariable ["maniobrando",false])) then
 			{
 			_medico == _unit;
 			};

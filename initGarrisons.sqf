@@ -222,7 +222,7 @@ _garrNum = _garrNum / 8;
 _garrison = [];
 _dmrk setMarkerType "c_plane";
 _dmrk setMarkerText "Aircrafts Dealer";
-_dmrk setMarkerColor "ColorCIV";
+_dmrk setMarkerColor "colorCiv";
 } forEach dealCivAir;
 {
 _pos = getMarkerPos _x;
@@ -232,7 +232,7 @@ _garrNum = random [2, 4, 6];
 _garrison = ["UK3CB_CHC_C_CIV"];
 _dmrk setMarkerType "c_car";
 _dmrk setMarkerText "Automotive Retailer";
-_dmrk setMarkerColor "ColorCIV";
+_dmrk setMarkerColor "colorCiv";
 } forEach dealCivGnd;
 
 {

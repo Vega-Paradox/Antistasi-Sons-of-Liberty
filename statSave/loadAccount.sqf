@@ -264,7 +264,7 @@ if (isServer and !_byPassServer) then
 		_garrison = [];
 		_dmrk setMarkerType "c_plane";
 		_dmrk setMarkerText "Aircrafts Dealer";
-		_dmrk setMarkerColor "ColorCIV";
+		_dmrk setMarkerColor "colorCiv";
 		} forEach dealCivAir;
 		{
 		_pos = getMarkerPos _x;
@@ -274,7 +274,7 @@ if (isServer and !_byPassServer) then
 		_garrison = ["UK3CB_CHC_C_CIV"];
 		_dmrk setMarkerType "c_car";
 		_dmrk setMarkerText "Automotive Retailer";
-		_dmrk setMarkerColor "ColorCIV";
+		_dmrk setMarkerColor "colorCiv";
 		} forEach dealCivGnd;
 
 		{
