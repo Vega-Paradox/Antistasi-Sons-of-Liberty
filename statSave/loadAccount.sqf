@@ -188,7 +188,7 @@ if (isServer and !_byPassServer) then
 	clearBackpackCargoGlobal caja;
 
 	[] remoteExec ["A3A_fnc_statistics",[buenos,civilian]];
-	diag_log "Antistasi: Server sided Persistent Load done";
+	diag_log "Antistasi: Server sided persistent load done";
 
 	["tasks"] call fn_LoadStat;
 	if !(isMultiplayer) then
@@ -263,7 +263,7 @@ if (isServer and !_byPassServer) then
 		_garrNum = _garrNum / 8;
 		_garrison = [];
 		_dmrk setMarkerType "c_plane";
-		_dmrk setMarkerText "Aircrafts Dealer";
+		_dmrk setMarkerText "Aircraft Dealer";
 		_dmrk setMarkerColor "colorCiv";
 		} forEach dealCivAir;
 		{
@@ -276,7 +276,6 @@ if (isServer and !_byPassServer) then
 		_dmrk setMarkerText "Automotive Retailer";
 		_dmrk setMarkerColor "colorCiv";
 		} forEach dealCivGnd;
-
 		{
 		_pos = getMarkerPos _x;
 		_dmrk = createMarker [format ["Dum%1",_x], _pos];
@@ -295,20 +294,9 @@ if (isServer and !_byPassServer) then
 		_garrNum = _garrNum / 8;
 		_garrison = [];
 		_dmrk setMarkerType "n_art";
-		_dmrk setMarkerText "Antique & Surplus Military Vehicles";
+		_dmrk setMarkerText "Military Surplus & Antiques";
 		_dmrk setMarkerColor "ColorUNKNOWN";
 		} forEach dealMilAnt;
-		{
-		_pos = getMarkerPos _x;
-		_dmrk = createMarker [format ["Dum%1",_x], _pos];
-		_dmrk setMarkerShape "ICON";
-		_garrNum = [_x] call A3A_fnc_garrisonSize;
-		_garrNum = _garrNum / 8;
-		_garrison = [];
-		_dmrk setMarkerType "n_mortar";
-		_dmrk setMarkerText "Chernarus Gun Club";
-		_dmrk setMarkerColor "ColorUNKNOWN";
-		} forEach dealMilWep;
 
 		lados setVariable ["NATO_carrier",malos,true];
 		lados setVariable ["CSAT_carrier",muyMalos,true];

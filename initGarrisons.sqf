@@ -221,7 +221,7 @@ _garrNum = [_x] call A3A_fnc_garrisonSize;
 _garrNum = _garrNum / 8;
 _garrison = [];
 _dmrk setMarkerType "c_plane";
-_dmrk setMarkerText "Aircrafts Dealer";
+_dmrk setMarkerText "Aircraft Dealer";
 _dmrk setMarkerColor "colorCiv";
 } forEach dealCivAir;
 {

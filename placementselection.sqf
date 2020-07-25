@@ -105,7 +105,7 @@ if (visiblemap) then
 	respawnBuenos setMarkerPos _posicionTel;
 	[respawnBuenos,1] remoteExec ["setMarkerAlphaLocal",[buenos,civilian]];
 	[respawnBuenos,0] remoteExec ["setMarkerAlphaLocal",[malos,muyMalos]];
-	if (isMultiplayer) then {hint "Please HQ assets are moved to the selected position.";sleep 5};
+	if (isMultiplayer) then {hint "Please wait while HQ assets are moved to the selected position.";sleep 5};
 	_pos = [_posicionTel, 3, getDir petros] call BIS_Fnc_relPos;
 	fuego setPos _pos;
 	_rnd = getdir Petros;

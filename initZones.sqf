@@ -292,6 +292,41 @@ if (count _posBancos > 0) then
         };
     };
 
+//Add dealer location markers
+{
+_pos = getMarkerPos _x;
+_dmrk = createMarker [format ["Dum%1",_x], _pos];
+_dmrk setMarkerShape "ICON";
+_dmrk setMarkerType "c_plane";
+_dmrk setMarkerText "Aircraft Dealer";
+_dmrk setMarkerColor "colorCiv";
+} forEach dealCivAir;
+{
+_pos = getMarkerPos _x;
+_dmrk = createMarker [format ["Dum%1",_x], _pos];
+_dmrk setMarkerShape "ICON";
+_dmrk setMarkerType "c_car";
+_dmrk setMarkerText "Automotive Retailer";
+_dmrk setMarkerColor "colorCiv";
+} forEach dealCivGnd;
+
+{
+_pos = getMarkerPos _x;
+_dmrk = createMarker [format ["Dum%1",_x], _pos];
+_dmrk setMarkerShape "ICON";
+_dmrk setMarkerType "n_Ordnance";
+_dmrk setMarkerText "Chernarus Black Market";
+_dmrk setMarkerColor "ColorUNKNOWN";
+} forEach dealMilBlk;
+{
+_pos = getMarkerPos _x;
+_dmrk = createMarker [format ["Dum%1",_x], _pos];
+_dmrk setMarkerShape "ICON";
+_dmrk setMarkerType "n_art";
+_dmrk setMarkerText "Military Surplus & Antiques";
+_dmrk setMarkerColor "ColorUNKNOWN";
+} forEach dealMilAnt;
+
 blackListDest = (marcadores - controles - ["Synd_HQ"] - ciudades) select {!((position ([getMarkerPos _x] call A3A_fnc_findNearestGoodRoad)) inArea _x)};
 
 publicVariable "blackListDest";
@@ -324,5 +359,7 @@ publicVariable "seaSpawn";
 publicVariable "seaAttackSpawn";
 publicVariable "dealCivAir";
 publicVariable "dealCivGnd";
-publicVariable "dealMilGnd";
+publicVariable "dealMilAnt";
+publicVariable "dealMilBlk";
+publicVariable "dealMilWep";
 publicVariable "defaultControlIndex";

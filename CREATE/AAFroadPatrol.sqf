@@ -48,7 +48,7 @@ if (lados getVariable [_base,sideUnknown] == malos) then
 			}
 		else
 			{
-			_tipoCoche = selectRandom [vehPoliceCar,vehFIAArmedCar];
+			_tipoCoche = selectRandom [vehPoliceCar,vehUNCar,vehFIAArmedCar,vehUNArmedCar];
 			};
 		};
 	}

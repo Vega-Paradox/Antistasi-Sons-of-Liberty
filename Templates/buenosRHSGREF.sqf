@@ -96,6 +96,7 @@ else
 		FIARifleman = "rhsgref_cdf_b_para_rifleman";
 		FIAMarksman = "rhsgref_cdf_b_para_marksman";
 		vehFIAArmedCar = "rhsgref_BRDM2_b";
+		vehUNArmedCar = "UK3CB_UN_B_M1117";
 		vehFIATruck = "UK3CB_B_BTR40_CDF";
 		vehFIACar = "UK3CB_B_LandRover_Closed_CDF";
 
@@ -121,10 +122,12 @@ else
 		};
 	};
 
+vehUNCar = "UK3CB_UN_B_M1025_M2";
 vehPoliceCar = "UK3CB_CPD_B_TIGR_FFV";
 policeOfficer = "UK3CB_CPD_B_OREL_SL";
 policeGrunt = "UK3CB_CPD_B_OREL_RIF_2";
-gruposNATOGen = [policeOfficer,policeGrunt];
+unSoldier = "UK3CB_UN_B_TL";
+gruposNATOGen = [policeOfficer,policeGrunt,unSoldier];
 nameBuenos = "DPVC";
 
 factionGEN = "rhsgref_faction_cdf_ground";

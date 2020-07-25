@@ -10,7 +10,7 @@ fn_SaveStat =
 			}
 		else
 			{
-			if (side group petros == independent) then {profileNameSpace setVariable [_varName + serverID + "Antistasi" + worldName,_varValue]} else {profileNameSpace setVariable [_varName + serverID + "AntistasiB" + worldName,_varValue]};
+			if (side group petros == independent) then {profileNameSpace setVariable [_varName + serverID + "Antistasi SoL" + worldName,_varValue]} else {profileNameSpace setVariable [_varName + serverID + "AntistasiB" + worldName,_varValue]};
 			};
 		if (isDedicated) then {saveProfileNamespace};
 		};
