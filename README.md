@@ -1,7 +1,7 @@
 # Antistasi - Sons of Liberty Chernarus
 ##### Enter Chernarus and fight amongst the Democratic People's Vilayet of Chernarus, an insurgent group hellbent on terminating the tyranical Chernarussian Defense Force and the Chernarussian government.
 
-## Sons of Liberty Release 2 BETA Week 2 Full Changelog
+## Sons of Liberty Release 2 Full Changelog
 ##### Immersion Changes
 - Reworked intro sequence
 - Dynamic weather system
@@ -22,7 +22,6 @@
 - New resource points added around the map
 - Stamina can now be disabled in the mission parameters
 - The lantern at the HQ and OJ Simpson can now be moved
-- Medikits can now be used to revive teammates
 ##### Arsenal starting weapons & equipment reconfigured:
 ###### Primaries
 - PM-63 automatic rifle
