@@ -23,7 +23,6 @@
 - Stamina can now be disabled in the mission parameters
 - The lantern at the HQ and OJ Simpson can now be moved
 - Medikits can now be used to revive teammates
-- Revive times are now much faster, up to 10 seconds if you are a medic, 14 seconds as a regular soldier, and 20 seconds if you are injured
 ##### Arsenal starting weapons & equipment reconfigured:
 ###### Primaries
 - PM-63 automatic rifle
