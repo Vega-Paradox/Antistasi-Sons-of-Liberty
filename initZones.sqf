@@ -217,7 +217,7 @@ else
             }
         else
             {
-            antenas = nearestObjects [[worldSize /2,worldSize/2,0],["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F","Land_Vysilac_FM","Land_A_TVTower_base","Land_Telek1"], worldSize];
+            antenas = nearestObjects [[worldSize /2,worldSize/2,0],["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F","Land_Vysilac_FM","Land_Telek1"], worldSize];
             bancos = nearestObjects [[worldSize /2,worldSize/2,0],["Land_Offices_01_V1_F"],worldSize];
             {
             _mrkfin = createMarker [format ["Ant%1", _x], position _x];
@@ -246,7 +246,7 @@ if (count _posAntenas > 0) then
     {
     for "_i" from 0 to (count _posAntenas - 1) do
         {
-        _antenaProv = nearestObjects [_posAntenas select _i,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F","Land_Vysilac_FM","Land_A_TVTower_base","Land_Telek1"], 35];
+        _antenaProv = nearestObjects [_posAntenas select _i,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F","Land_Vysilac_FM","Land_Telek1"], 35];
         if (count _antenaProv > 0) then
             {
             _antena = _antenaProv select 0;

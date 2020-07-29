@@ -112,7 +112,6 @@ _pos = getPosASL garageVeh;
 _dir = getDir garageVeh;
 deleteVehicle garageVeh;
 //if !(player inArea _cercano) then {hint "You need to be close to one of your garrisons to be able to buy a vehicle";["",0,0,5,0,0,4] spawn bis_fnc_dynamicText; comprado = nil;garageVeh = nil};
-if ([player,300] call A3A_fnc_enemyNearCheck) then {comprado = 0; hint "You cannot buy vehicles with enemies nearby!"};
 if (comprado != 2) exitWith {comprado = nil;garageVeh = nil};
 waitUntil {isNull garageVeh};
 garageVeh = nil;

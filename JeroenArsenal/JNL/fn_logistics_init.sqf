@@ -80,18 +80,18 @@ jnl_vehicleHardpoints = [
 
 
 	//NATO HEMTT open "B_Truck_01_covered_F"  seats not checked! boxes are slighlty floating, difficult to see anyway
-  ["\A3\soft_f_beta\Truck_01\Truck_01_transport_F.p3d",[
-    [1,[0.0419922,-0.222656,-0.282602],[3,4,10,11,2]],
-    [1,[0.106445,-2.16602,-0.282602],[1,16,8,9]],
-    [1,[0.129883,-4.11816,-0.282602],[5,6,12,13,15,7]]
-  ]],
+	["\A3\soft_f_beta\Truck_01\Truck_01_transport_F.p3d",[
+		[1,[0.0419922,-0.222656,-0.282602],[3,4,10,11,2]],
+		[1,[0.106445,-2.16602,-0.282602],[1,16,8,9]],
+		[1,[0.129883,-4.11816,-0.282602],[5,6,12,13,15,7]]
+	]],
 
-  //NATO HEMMT closed "B_Truck_01_covered_F"  seats not checked
-  ["\A3\soft_f_beta\Truck_01\Truck_01_covered_F.p3d",[
-    [1,[0.0383301,-0.224609,-0.437691],[1,16,8,9,2]],
-    [1,[0.0856934,-2.16016,-0.437691],[3,4,10,11]],
-    [1,[0.0893555,-4.10547,-0.437691],[5,6,12,13,15]]
-  ]],
+	//NATO HEMMT closed "B_Truck_01_covered_F"  seats not checked
+	["\A3\soft_f_beta\Truck_01\Truck_01_covered_F.p3d",[
+		[1,[0.0383301,-0.224609,-0.437691],[1,16,8,9,2]],
+		[1,[0.0856934,-2.16016,-0.437691],[3,4,10,11]],
+		[1,[0.0893555,-4.10547,-0.437691],[5,6,12,13,15]]
+	]],
 
 	//CSAT Tempest open
 	["\A3\Soft_F_EPC\Truck_03\Truck_03_transport_F.p3d",[
@@ -299,3 +299,8 @@ _defaultCrew = gettext (configfile >> "cfgvehicles" >> "all" >> "crew");
 		};
 	};
 } foreach ("isclass _x && {getnumber (_x >> 'scope') == 2} && {gettext (_x >> 'crew') != _defaultCrew}" configclasses (configfile >> "cfgvehicles"));
+
+
+
+// model = "\UK3CB_Factions\addons\UK3CB_Factions_Vehicles\wheeled\UK3CB_Factions_Vehicles_datsun\uk3cb_datsun_civ_open.p3d";
+// model = "\UK3CB_Factions\addons\UK3CB_Factions_Vehicles\wheeled\UK3CB_Factions_Vehicles_v3s\uk3cb_v3s_open.p3d";
