@@ -95,23 +95,24 @@ _introShot =
 	true
     ] spawn BIS_fnc_establishingShot;
 //sleep 10.75;
+_daytime = daytime;
+_formTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
 waitUntil {scriptdone _introshot};
-	[0, "BLACK", 0.01, 1] spawn BIS_fnc_fadeEffect;
-	sleep 0.25;
-	5 fadeSound 1;
-_titulo = if (worldName == "Chernarus") then {sleep 1.5; [
+	// [0, "BLACK", 0.01, 1] spawn BIS_fnc_fadeEffect;
+	// sleep 0.25;
+	// 5 fadeSound 1;
+_titulo = if (worldName == "Chernarus") then {sleep 1.5; 
+[
 	[
-		["SONS OF LIBERTY", "<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t><br/>"],
-		["by Warcrimes-R-Us", "<t align = 'center' shadow = '1' size = '0.8' font='EtelkaMonospacePro'>%1</t><br/>"],
-		["original Antistasi by Barbolani", "<t align = 'center' shadow = '1' size = '0.65' font='EtelkaMonospacePro'>%1</t>", 5]
+		// ["SONS OF LIBERTY", "<t align = 'left' shadow = '1' size = '1' font='PuristaBold'>%1</t><br/>"],
+		// ["by Warcrimes-R-Us", "<t align = 'left' shadow = '1' size = '0.8' font='EtelkaMonospacePro'>%1</t>", 10]
+		["DPVC HEADQUARTERS,", "<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t>"],
+		["THE BOONIES", "<t align = 'center' shadow = '1' size = '1'>%1</t><br/>"],
+		[_formTime, "<t align = 'center' shadow = '1' size = '1'>%1</t>", 15]
 	],
-	0, safeZoneY + safeZoneH / 2
-] spawn BIS_fnc_typeText; sleep 9.5; [
-	[
-		["Welcome to the fight, comrade.", "<t align = 'center' shadow = '1' size = '0.75' font='EtelkaMonospacePro'>%1</t>", 15]
-	],
-	0, safeZoneY + safeZoneH / 2
-] spawn BIS_fnc_typeText; sleep 6.5; [1, "BLACK", 3, 1] spawn BIS_fnc_fadeEffect;} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
+	0,
+	safeZoneY + safeZoneH / 2
+] spawn BIS_fnc_typeText;} else {["Antistasi","by Barbolani",antistasiVersion] spawn BIS_fnc_infoText};
 disableUserInput false;
 player addWeaponGlobal "itemmap";
 if !(hayIFA) then {player addWeaponGlobal "itemgps"};
@@ -519,7 +520,7 @@ if (_isJip) then
 		}
 	else
 		{
-		_nul = [] execVM "Dialogs\firstLoad.sqf";
+		if (!isMultiplayer) then {_nul = [] execVM "Dialogs\firstLoad.sqf";}
 		};
 	diag_log "Antistasi MP Client. JIP client finished";
 	player setPos (getMarkerPos respawnBuenos);

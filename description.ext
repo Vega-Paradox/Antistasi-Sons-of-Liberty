@@ -3,10 +3,10 @@
 
 author="Barbolani, Chernarus port by Evoke, SOL by Warcrimes-R-Us";
 OnLoadName = "Sons Of Liberty - Chernarus";
-OnLoadMission = "We will soak the lands in blood to gain our freedom";
+OnLoadMission = "We will soak the lands in blood to gain our freedom! Tear down the CDF!";
 loadScreen = "loadingscreen.jpg";
 
-overviewText = "We will soak the lands in blood to gain our freedom";
+overviewText = "We will soak the lands in blood to gain our freedom! Tear down the CDF!";
 overviewPicture = "loadingscreen.jpg";
 
 allowFunctionsLog = 1;
@@ -47,7 +47,7 @@ class Header
 {
 gameType = COOP;
 minplayers=1;
-maxplayers=70;
+maxplayers=64;
 };
 
 class CfgSounds

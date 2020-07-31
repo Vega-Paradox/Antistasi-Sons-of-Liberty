@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2587;
+		nextID=2732;
 	};
 	class Camera
 	{
-		pos[]={1359.696,558.10773,9064.9111};
-		dir[]={-0.37698641,-0.91649646,0.13399947};
-		up[]={-0.86356479,0.40004641,0.30695421};
-		aside[]={0.33492571,-5.5716373e-007,0.94226402};
+		pos[]={1245.9989,353.96585,8753.9844};
+		dir[]={0.56177247,-0.82606268,-0.046989359};
+		up[]={0.82328349,0.56343406,-0.068865307};
+		aside[]={-0.083358005,-3.8382132e-007,-0.99660498};
 	};
 };
 binarizationWanted=0;
@@ -672,7 +672,7 @@ class ScenarioData
 	respawnDelay=30;
 	class Header
 	{
-		gameType="CTI";
+		gameType="Coop";
 		minPlayers=1;
 		maxPlayers=64;
 	};
@@ -954,7 +954,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Antistasi - Sons of Liberty Chernarus";
-		overviewText="Build an insurgent army from scratch and defeat CDF and AFRF forces in a persistent mission in Chernarus.";
+		overviewText="Build an insurgent army from scratch, fight the tryanical CDF scum, and push back the invading Russian forces on Chernarus!";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0;
@@ -964,9 +964,9 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2035;
-		month=6;
-		day=6;
+		year=2020;
+		month=9;
+		day=1;
 		hour=12;
 		minute=0;
 		startFogBase=250;
@@ -4723,8 +4723,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1272.8861,328.05939,8752.5166};
-				angles[]={6.2618566,0.39109486,0.070548877};
+				position[]={1272.6298,328.03665,8752.334};
+				angles[]={6.253861,0.39109486,0.070548877};
 			};
 			side="Empty";
 			flags=4;
@@ -4734,7 +4734,6 @@ class Mission
 			};
 			id=528;
 			type="Land_Camping_Light_F";
-			atlOffset=-0.00061035156;
 		};
 		class Item131
 		{
