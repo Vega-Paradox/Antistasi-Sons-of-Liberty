@@ -761,7 +761,7 @@ if (!isNil "ace_common_fnc_isModLoaded") then {
 	};
 
 	if (isClass (ConfigFile >> "CfgSounds" >> "ACE_heartbeat_fast_3")) then {
-		if (ace_medical_level == 2) then {
+		if (ace_medical_level > 1) then {
 			hayACEMedical = true;
 			unlockedItems = unlockedItems + aceBasicMedItems + aceAdvMedItems;
 		};
