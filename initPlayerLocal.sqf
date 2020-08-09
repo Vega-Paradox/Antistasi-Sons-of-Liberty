@@ -97,6 +97,7 @@ _introShot =
 //sleep 10.75;
 _daytime = daytime;
 _formTime = [_daytime, "HH:MM"] call BIS_fnc_timeToString;
+_hqGrid = "GRID " + mapGridPosition getPos bandera;
 waitUntil {scriptdone _introshot};
 	// [0, "BLACK", 0.01, 1] spawn BIS_fnc_fadeEffect;
 	// sleep 0.25;
@@ -107,7 +108,7 @@ _titulo = if (worldName == "Chernarus") then {sleep 1.5;
 		// ["SONS OF LIBERTY", "<t align = 'left' shadow = '1' size = '1' font='PuristaBold'>%1</t><br/>"],
 		// ["by Warcrimes-R-Us", "<t align = 'left' shadow = '1' size = '0.8' font='EtelkaMonospacePro'>%1</t>", 10]
 		["DPVC HEADQUARTERS,", "<t align = 'center' shadow = '1' size = '1' font='PuristaBold'>%1</t>"],
-		["THE BOONIES", "<t align = 'center' shadow = '1' size = '1'>%1</t><br/>"],
+		[_hqGrid, "<t align = 'center' shadow = '1' size = '1'>%1</t><br/>"],
 		[_formTime, "<t align = 'center' shadow = '1' size = '1'>%1</t>", 15]
 	],
 	0,
